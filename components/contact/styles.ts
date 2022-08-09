@@ -7,7 +7,8 @@ export const useStyles = createStyles((theme) => {
   return {
     contactContainer: {
       position: "relative",
-      boxShadow: checkTheme(theme, theme.shadows.md, "")
+      boxShadow: checkTheme(theme, theme.shadows.md, ""),
+      width: "60%"
     },
     wrapper: {
       display: "flex",
