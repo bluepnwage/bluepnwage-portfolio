@@ -3,6 +3,8 @@ import { Clock, Check } from "tabler-icons-react";
 import { ClientProjectObj } from "interfaces";
 import { ClientProject } from "./ClientProject";
 import { useStyles } from "./styles";
+import tmEnterprises from "../../public/tm-enterprises.png";
+import shmkCamp from "../../public/shmk-camp.png";
 
 export default function ClientProjects() {
   const { classes, cx } = useStyles();
@@ -51,7 +53,7 @@ const clientProjects: ClientProjectObj[] = [
         and performant the website is so far.
       </Text>
     ),
-    imgSrc: "/tm-enterprises.png",
+    imgSrc: tmEnterprises,
     status: "In progress",
     websiteType: "Marketing"
   },
@@ -69,7 +71,7 @@ const clientProjects: ClientProjectObj[] = [
         for payments.
       </Text>
     ),
-    imgSrc: "/shmk-camp.png",
+    imgSrc: shmkCamp,
     status: "In progress",
     websiteType: "E-commerce"
   }

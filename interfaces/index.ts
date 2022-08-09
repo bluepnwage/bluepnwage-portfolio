@@ -1,4 +1,5 @@
 import { MantineColor } from "@mantine/core";
+import { StaticImageData } from "next/image";
 import { ReactNode } from "react";
 
 export interface ProjectObj {
@@ -6,7 +7,7 @@ export interface ProjectObj {
   description: ReactNode;
   href: string;
   techStack: TechStack[];
-  imgSrc: string;
+  imgSrc: StaticImageData;
 }
 
 export interface TechStack {
@@ -19,7 +20,7 @@ export type TechType = "Next.Js" | "JavaScript" | "HTML" | "CSS" | "Postgres" | 
 export interface ClientProjectObj {
   title: string;
   description: ReactNode;
-  imgSrc: string;
+  imgSrc: StaticImageData;
   status: "In progress" | "Completed";
   websiteType: string;
 }

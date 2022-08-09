@@ -3,6 +3,10 @@ import { ProjectObj } from "interfaces";
 import { Project } from "./Project";
 import { createStack } from "util/techStack";
 import { useStyles } from "./styles";
+import blogSocial from "../../public/blog-social.png";
+import chatApp from "../../public/chat-app.png";
+import cryptoTracker from "../../public/crypto-tracker.png";
+import sxmPois from "../../public/sxm-pois.png";
 
 export function ProjectList() {
   const { classes, cx } = useStyles();
@@ -52,7 +56,7 @@ const projects: ProjectObj[] = [
     ),
     href: "https://sxm-pois.vercel.app/",
     techStack: createStack(false, "Next.Js", "JavaScript", "Postgres"),
-    imgSrc: "/sxm-pois.png"
+    imgSrc: sxmPois
   },
   {
     title: "Crypto Tracker",
@@ -67,7 +71,7 @@ const projects: ProjectObj[] = [
       </Text>
     ),
     href: "https://bluepnwage-crypto-tracker.vercel.app/",
-    imgSrc: "/crypto-tracker.png",
+    imgSrc: cryptoTracker,
     techStack: createStack(false, "Next.Js", "TypeScript")
   },
   {
@@ -93,7 +97,7 @@ const projects: ProjectObj[] = [
       </Text>
     ),
     href: "https://blog-social-jade.vercel.app/",
-    imgSrc: "/blog-social.png",
+    imgSrc: blogSocial,
     techStack: createStack(false, "TypeScript", "Next.Js", "Postgres")
   },
   {
@@ -120,7 +124,7 @@ const projects: ProjectObj[] = [
       </>
     ),
     href: "https://chat-app2-nu.vercel.app/",
-    imgSrc: "/chat-app.png",
+    imgSrc: chatApp,
     techStack: createStack(false, "Next.Js", "TypeScript", "Postgres")
   }
 ];

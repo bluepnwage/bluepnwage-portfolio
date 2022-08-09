@@ -1,2 +1,3 @@
 User-Agent: *
 Allow: /
+Sitemap: https://portfolio-bluepnwage.vercel.app/sitemap.xml
