@@ -8,7 +8,10 @@ export const useStyles = createStyles((theme) => {
     contactContainer: {
       position: "relative",
       boxShadow: checkTheme(theme, theme.shadows.md, ""),
-      width: "60%"
+      width: "60%",
+      [BREAKPOINT]: {
+        width: "85%"
+      }
     },
     wrapper: {
       display: "flex",

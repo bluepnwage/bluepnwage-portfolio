@@ -71,30 +71,30 @@ const projects: ProjectObj[] = [
     techStack: createStack(false, "Next.Js", "TypeScript")
   },
   {
-    title: "News App",
+    title: "Blog Social",
     description: (
       <Text component="p">
-        This was a simple project to practice using TypeScript with{" "}
-        <Anchor title={"Website for Redux"} href={"https://redux.js.org/"} target={"_blank"}>
-          Redux
+        This project was created so I can practise using a Backend-as-a-Service with{" "}
+        <Anchor title={"Website supabase"} href={"https://supabase.com/"} target={"_blank"}>
+          Supabase
         </Anchor>{" "}
-        and{" "}
-        <Anchor href={"https://mantine.dev/"} target={"_blank"} title={"Website for Mantine.dev"}>
-          Mantine
-        </Anchor>
-        . I was able to fetch news articles from the <em>New York Times</em> thanks to their{" "}
+        for the first time, and make use the newest features for Next.js such as{" "}
         <Anchor
-          title={"Website for New York Times Developers"}
-          href={"https://developer.nytimes.com/"}
+          title={"Website for Next.js"}
           target={"_blank"}
+          href={
+            "https://nextjs.org/blog/next-12-2?utm_source=next-site&utm_medium=banner&utm_campaign=next-website#on-demand-incremental-static-regeneration-stable"
+          }
         >
-          API.
-        </Anchor>
+          On-demand incremental static regeneration
+        </Anchor>{" "}
+        , which allows me to update certain pages on a website without needing to redeploy. In this website, users are
+        allowed to sign up, write and publish blogs, update their profile, and view other users&apos; profiles.
       </Text>
     ),
-    href: "https://news-app-mauve-seven.vercel.app/",
-    imgSrc: "/news-app.png",
-    techStack: createStack(false, "React", "JavaScript")
+    href: "https://blog-social-jade.vercel.app/",
+    imgSrc: "/blog-social.png",
+    techStack: createStack(false, "TypeScript", "Next.Js", "Postgres")
   },
   {
     title: "Chat App",
