@@ -1,5 +1,5 @@
 import Header from "./Header";
-import { ReactNode, useState } from "react";
+import { ReactNode, useState, useEffect } from "react";
 import { MantineProvider, Paper, ColorSchemeProvider, ColorScheme } from "@mantine/core";
 import { NotificationsProvider } from "@mantine/notifications";
 
@@ -9,6 +9,11 @@ interface PropTypes {
 
 export default function Layout({ children }: PropTypes) {
   const [colorScheme, setColorScheme] = useState<ColorScheme>("dark");
+
+  useEffect(() => {
+    const html = document.documentElement;
+    html.className = colorScheme;
+  }, []);
 
   const toggleTheme = (theme?: ColorScheme) => {
     if (theme !== "dark") {

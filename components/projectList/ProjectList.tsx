@@ -82,7 +82,7 @@ const projects: ProjectObj[] = [
         <Anchor title={"Website supabase"} href={"https://supabase.com/"} target={"_blank"}>
           Supabase
         </Anchor>{" "}
-        for the first time, and make use the newest features for Next.js such as{" "}
+        for the first time, and make use of the newest features for Next.js such as{" "}
         <Anchor
           title={"Website for Next.js"}
           target={"_blank"}
