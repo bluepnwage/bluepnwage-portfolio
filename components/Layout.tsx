@@ -13,7 +13,7 @@ export default function Layout({ children }: PropTypes) {
   useEffect(() => {
     const html = document.documentElement;
     html.className = colorScheme;
-  }, []);
+  }, [colorScheme]);
 
   const toggleTheme = (theme?: ColorScheme) => {
     if (theme !== "dark") {
