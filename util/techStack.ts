@@ -11,6 +11,10 @@ export function createStack(includeAll: boolean, ...args: TechType[]) {
       color: "cyan"
     },
     {
+      label: "TailwindCSS",
+      color: "violet"
+    },
+    {
       label: "JavaScript",
       color: "yellow"
     },

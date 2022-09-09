@@ -7,6 +7,7 @@ import blogSocial from "../../public/blog-social.png";
 import chatApp from "../../public/chat-app.png";
 import cryptoTracker from "../../public/crypto-tracker.png";
 import sxmPois from "../../public/sxm-pois.png";
+import restaurantBooker from "../../public/restaurant-booker.png";
 
 export function ProjectList() {
   const { classes, cx } = useStyles();
@@ -126,5 +127,23 @@ const projects: ProjectObj[] = [
     href: "https://chat-app2-nu.vercel.app/",
     imgSrc: chatApp,
     techStack: createStack(false, "Next.Js", "TypeScript", "Postgres")
+  },
+  {
+    title: "Feliciano Restaurant",
+    href: "https://restaurant-booker.vercel.app/",
+    imgSrc: restaurantBooker,
+    description: (
+      <>
+        <Text component="p">
+          This project was built so that I could practise optimizing performance when dealing with large images, setting
+          up scroll animations with{" "}
+          <Anchor href={"https://www.framer.com/motion/"} target={"_blank"}>
+            Framer motion
+          </Anchor>
+          , and allowing users to set up reservations online and storing the information in a MongoDB database.
+        </Text>
+      </>
+    ),
+    techStack: createStack(false, "Next.Js", "TypeScript", "MongoDB", "TailwindCSS")
   }
 ];

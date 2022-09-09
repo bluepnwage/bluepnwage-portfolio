@@ -15,12 +15,18 @@ export interface TechStack {
   color: MantineColor;
 }
 
-export type TechType = "Next.Js" | "JavaScript" | "HTML" | "CSS" | "Postgres" | "MongoDB" | "React" | "TypeScript";
+export type TechType =
+  | "Next.Js"
+  | "JavaScript"
+  | "HTML"
+  | "CSS"
+  | "Postgres"
+  | "MongoDB"
+  | "React"
+  | "TypeScript"
+  | "TailwindCSS";
 
-export interface ClientProjectObj {
-  title: string;
-  description: ReactNode;
-  imgSrc: StaticImageData;
+export interface ClientProjectObj extends Omit<ProjectObj, "techStack" | "href"> {
   status: "In progress" | "Completed";
   websiteType: string;
 }
