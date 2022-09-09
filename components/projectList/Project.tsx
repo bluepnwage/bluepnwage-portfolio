@@ -10,7 +10,7 @@ interface PropTypes {
 export function Project({ project }: PropTypes) {
   const { classes } = useStyles();
   return (
-    <Grid grow mb={85}>
+    <Grid className={classes.projectGrid} grow mb={85}>
       <Grid.Col className={classes.descriptionCol} lg={6}>
         <Title mb={"md"} order={3}>
           {project.title}

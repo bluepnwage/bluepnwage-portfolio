@@ -35,6 +35,11 @@ export const useStyles = createStyles((theme) => ({
   imgCol: {
     gridColumnStart: 7
   },
+  projectGrid: {
+    [theme.fn.smallerThan("sm")]: {
+      flexDirection: "column-reverse"
+    }
+  },
   article: {
     color: checkTheme(theme, theme.colors.gray[7], theme.colors.gray[5])
   }
