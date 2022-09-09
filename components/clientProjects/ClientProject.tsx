@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Image } from "components/Image";
 import { Badge, Stack, Text, Title } from "@mantine/core";
 import { useStyles } from "./styles";
 import { ClientProjectObj } from "interfaces";
@@ -13,7 +13,7 @@ export function ClientProject({ title, description, imgSrc, status, icon, websit
     <>
       <div className={classes.projectContainer}>
         <figure className={classes.imgContainer}>
-          <Image src={imgSrc} layout={"fill"} alt={`${websiteType} website`} />
+          <Image className={classes.img} src={imgSrc} alt={`${websiteType} website`} />
         </figure>
         <Title order={3} mb={"md"}>
           {title}

@@ -10,9 +10,12 @@ export const useStyles = createStyles((theme) => ({
     }
   },
   imgContainer: {
-    aspectRatio: "16 / 9",
-    backgroundColor: theme.colors.blue[3],
-    position: "relative"
+    height: "100%",
+    width: "100%"
+  },
+  img: {
+    width: "100%",
+    height: "100%"
   },
   flex: {
     display: "flex"

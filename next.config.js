@@ -1,8 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  images: {
-    allowFutureImages: true
+  experimental: {
+    images: {
+      allowFutureImage: true
+    }
   },
   async headers() {
     return [

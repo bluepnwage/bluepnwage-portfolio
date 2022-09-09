@@ -1,7 +1,7 @@
-import Image from "next/image";
 import { Anchor, Badge, Grid, Group, Space, Text, Title } from "@mantine/core";
 import { useStyles } from "./styles";
 import { ProjectObj } from "interfaces";
+import { Image } from "components/Image";
 
 interface PropTypes {
   project: ProjectObj;
@@ -11,7 +11,7 @@ export function Project({ project }: PropTypes) {
   const { classes } = useStyles();
   return (
     <Grid grow mb={85}>
-      <Grid.Col lg={6}>
+      <Grid.Col className={classes.descriptionCol} lg={6}>
         <Title mb={"md"} order={3}>
           {project.title}
         </Title>
@@ -34,9 +34,9 @@ export function Project({ project }: PropTypes) {
           })}
         </Group>
       </Grid.Col>
-      <Grid.Col className={classes.descriptionCol} lg={6}>
+      <Grid.Col className={classes.imgCol} lg={6}>
         <figure className={classes.imgContainer}>
-          <Image layout={"fill"} alt={project.title} src={project.imgSrc} />
+          <Image className={classes.img} alt={project.title} src={project.imgSrc} />
         </figure>
       </Grid.Col>
     </Grid>
