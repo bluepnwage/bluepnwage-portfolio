@@ -82,7 +82,7 @@ interface ContactIconsListProps {
 }
 
 const MOCKDATA = [
-  { title: "Email", description: "a.carty2555@gmail.com", icon: At, href: "#" },
+  { title: "Email", description: "a.carty2555@gmail.com", icon: At, href: "mailto:a.carty2555@gmail.com" },
   {
     title: "Linkedin",
     description: "Agis Carty",
