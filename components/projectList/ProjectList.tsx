@@ -140,7 +140,9 @@ const projects: ProjectObj[] = [
           <Anchor href={"https://www.framer.com/motion/"} target={"_blank"}>
             Framer motion
           </Anchor>
-          , and allowing users to set up reservations online and storing the information in a MongoDB database.
+          , and allowing users to set up reservations online and storing the information in a MongoDB database. I also
+          practiced using scheduled functions to <Text component="strong">automatically</Text> remove all passed
+          reservations in the database.
         </Text>
       </>
     ),

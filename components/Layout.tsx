@@ -37,8 +37,12 @@ export default function Layout({ children }: PropTypes) {
         >
           <NotificationsProvider>
             <Header onToggle={toggleTheme} />
-            <Paper sx={() => ({ borderRadius: 0, minHeight: "100vh", transition: "all 250ms ease-out" })}>
-              <main className="section-container">{children}</main>
+            <Paper
+              className="section-container"
+              component="main"
+              sx={() => ({ borderRadius: 0, minHeight: "100vh", transition: "all 250ms ease-out" })}
+            >
+              {children}
             </Paper>
           </NotificationsProvider>
         </MantineProvider>

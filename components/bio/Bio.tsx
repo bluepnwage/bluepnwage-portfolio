@@ -40,6 +40,9 @@ const useStyles = createStyles((theme) => ({
   },
   article: {
     color: checkTheme(theme, theme.colors.gray[7], theme.colors.gray[5])
+  },
+  header: {
+    width: "60%"
   }
 }));
 
@@ -49,9 +52,11 @@ export function Bio() {
 
   return (
     <>
-      <Title className={classes.container} mt={"xl"} mb={"sm"} order={1}>
-        Agis Carty
-      </Title>
+      <header className={classes.header}>
+        <Title mt={"xl"} mb={"sm"} order={1}>
+          Agis Carty
+        </Title>
+      </header>
       <section className={cx(classes.container, classes.flex)}>
         <div className={classes.bioContainer}>
           <Title mb={"md"} order={2}>
