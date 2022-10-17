@@ -40,7 +40,7 @@ export default function Layout({ children }: PropTypes) {
             <Paper
               className="section-container"
               component="main"
-              sx={() => ({ borderRadius: 0, minHeight: "100vh", transition: "all 250ms ease-out" })}
+              sx={() => ({ borderRadius: 0, minHeight: "100vh", transition: "all 250ms ease-out", display: "flex" })}
             >
               {children}
             </Paper>
