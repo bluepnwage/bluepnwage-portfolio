@@ -21,10 +21,12 @@ const useStyles = createStyles((theme) => ({
     transition: "all 250ms ease-out"
   },
   nav: {
-    width: "60%",
+    minWidth: "60%",
     justifyContent: "space-between",
+    gap: theme.spacing.xl,
     [theme.fn.smallerThan("sm")]: {
-      width: "85%"
+      width: "85%",
+      gap: 0
     }
   },
   flex: {
