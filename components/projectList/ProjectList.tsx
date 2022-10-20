@@ -8,6 +8,7 @@ import chatApp from "../../public/chat-app.png";
 import cryptoTracker from "../../public/crypto-tracker.png";
 import sxmPois from "../../public/sxm-pois.png";
 import restaurantBooker from "../../public/restaurant-booker.png";
+import sxmAirport from "../../public/sxm-airport.png";
 
 export function ProjectList() {
   const { classes, cx } = useStyles();
@@ -28,6 +29,41 @@ export function ProjectList() {
 }
 
 const projects: ProjectObj[] = [
+  {
+    title: "SXM Airport",
+    href: "https://sxm-airport.vercel.app/",
+    imgSrc: sxmAirport,
+    techStack: createStack(false, "Next.Js", "TypeScript"),
+    description: (
+      <Text component="p" mb={"md"}>
+        This project allows you to view the daily schedule for all arrivals and departures concerning{" "}
+        <Anchor
+          target={"_blank"}
+          href={"https://www.sxmairport.com/"}
+          title={"Princess Juliana Airport offical website."}
+        >
+          Princess Juliana Airport.
+        </Anchor>{" "}
+        There is also an interactive map, powered by{" "}
+        <Anchor target={"_blank"} title={"Mapbox official website"} href={"https://www.mapbox.com/"}>
+          mapbox
+        </Anchor>
+        , which can be used to track live flights that are currently flying towards Sint Maarten. Finally, there is a
+        gallery to view images of the airport. Users can sign up and upload their own images to the gallery if they wish
+        to do so. Everything from authentication, to storing images and saving data is handled thanks to{" "}
+        <Anchor title={"Firebase official website"} target={"_blank"} href={"https://firebase.google.com/"}>
+          Firebase
+        </Anchor>
+        . I made use of caching responses by setting HTTP headers combined with{" "}
+        <Anchor href={"https://redis.io/"} target={"_blank"} title={"Redis offical website."}>
+          Redis
+        </Anchor>
+        , to ensure the server does not make any unecessary requests knowing the airport schedule is most likely updated
+        only once a day. Rate limiting has also been set up to prevent users from uploading more than 25 images a day.
+        Doing this gives me time to review and approve of all uploaded images.
+      </Text>
+    )
+  },
   {
     title: "SXM POI Locator",
     description: (

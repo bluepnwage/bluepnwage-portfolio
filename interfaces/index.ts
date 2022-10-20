@@ -1,6 +1,6 @@
-import { MantineColor } from "@mantine/core";
-import { StaticImageData } from "next/image";
-import { ReactNode } from "react";
+import type { MantineColor } from "@mantine/core";
+import type { StaticImageData } from "next/image";
+import type { ReactNode } from "react";
 
 export interface ProjectObj {
   title: string;
