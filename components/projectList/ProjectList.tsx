@@ -40,7 +40,7 @@ const projects: ProjectObj[] = [
         <Anchor
           target={"_blank"}
           href={"https://www.sxmairport.com/"}
-          title={"Princess Juliana Airport offical website."}
+          title={"Princess Juliana Airport official website."}
         >
           Princess Juliana Airport.
         </Anchor>{" "}
@@ -55,7 +55,7 @@ const projects: ProjectObj[] = [
           Firebase
         </Anchor>
         . I made use of caching responses by setting HTTP headers combined with{" "}
-        <Anchor href={"https://redis.io/"} target={"_blank"} title={"Redis offical website."}>
+        <Anchor href={"https://redis.io/"} target={"_blank"} title={"Redis official website."}>
           Redis
         </Anchor>
         , to ensure the server does not make any unecessary requests knowing the airport schedule is most likely updated
