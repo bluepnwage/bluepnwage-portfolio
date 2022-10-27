@@ -1,44 +1,38 @@
-import { Anchor, Badge, Grid, Group, Space, Text, Title } from "@mantine/core";
-import { useStyles } from "./styles";
-import { ProjectObj } from "interfaces";
-import { Image } from "components/Image";
+import type { ProjectObj } from "../../interfaces/index";
+import { Badge } from "../Badge";
+import styles from "../styles.module.css";
 
-interface PropTypes {
-  project: ProjectObj;
-}
-
-export function Project({ project }: PropTypes) {
-  const { classes } = useStyles();
+export function Project({ description, href, imgSrc, techStack, title }: ProjectObj) {
   return (
-    <Grid className={classes.projectGrid} grow mb={85}>
-      <Grid.Col className={classes.descriptionCol} lg={6}>
-        <Title mb={"md"} order={3}>
-          {project.title}
-        </Title>
-        <article className={classes.article}>{project.description}</article>
-        <Anchor target={"_blank"} href={project.href}>
+    <article className="flex items-start gap-2 ">
+      <div className="basis-2/4 w-2/4 grow">
+        <h3 className="font-bold text-2xl mb-2">{title}</h3>
+        {description}
+        <a href={href} className="text-indigo-400 mb-2">
           Link to website
-        </Anchor>
-        <Space mb={"md"} />
-        <Text component={"strong"} mb={"md"}>
-          Technologies used:
-        </Text>
-        <Space mb={"sm"} />
-        <Group className={classes.badgeContainer}>
-          {project.techStack.map((tech, index) => {
+        </a>
+        <strong className="my-2 block">Technologies used</strong>
+        <div className="flex gap-4 mb-2 justify-center flex-wrap w-full">
+          {techStack.map((skill, index) => {
+            const bg = styles[`badge-${skill.color}`];
             return (
-              <Badge key={index} color={tech.color}>
-                {tech.label}
+              <Badge key={index} bgColor={bg}>
+                {skill.label}
               </Badge>
             );
           })}
-        </Group>
-      </Grid.Col>
-      <Grid.Col className={classes.imgCol} lg={6}>
-        <figure className={classes.imgContainer}>
-          <Image className={classes.img} alt={project.title} src={project.imgSrc} />
-        </figure>
-      </Grid.Col>
-    </Grid>
+        </div>
+      </div>
+      <figure className="basis-2/4 rounded-md overflow-hidden grow aspect-video bg-indigo-600">
+        <img
+          className="w-full h-full"
+          src={imgSrc as string}
+          alt={"Home page for sxm airport"}
+          width={"100%"}
+          height={"100%"}
+          loading="lazy"
+        />
+      </figure>
+    </article>
   );
 }

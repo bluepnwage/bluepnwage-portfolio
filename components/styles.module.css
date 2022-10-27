@@ -1,0 +1,37 @@
+.badge-blue {
+  background-color: rgba(79, 70, 229, 0.35);
+  color: rgb(219, 234, 254);
+}
+.badge-yellow {
+  background-color: rgba(202, 138, 4, 0.35);
+  color: rgb(254, 249, 195);
+}
+.badge-orange {
+  background-color: rgba(234, 88, 12, 0.35);
+  color: rgb(255, 237, 213);
+}
+.badge-violet {
+  background-color: rgba(124, 58, 237, 0.35);
+  color: rgb(237, 233, 254);
+}
+.badge-cyan {
+  background-color: rgba(8, 145, 178, 0.35);
+  color: rgb(207, 250, 254);
+}
+.badge-gray {
+  background-color: rgba(75, 85, 99, 0.35);
+  color: rgb(243, 244, 246);
+}
+.badge-green {
+  background-color: rgba(22, 163, 74, 0.35);
+  color: rgb(220, 252, 231);
+}
+.badge-fuchsia {
+  background-color: rgba(192, 38, 211, 0.35);
+  color: rgb(250, 232, 255);
+}
+
+.badge-indigo {
+  background-color: rgba(79, 70, 229, 0.35);
+  color: rgb(224, 231, 255);
+}

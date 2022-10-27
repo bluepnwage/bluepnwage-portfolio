@@ -11,12 +11,12 @@ export function createStack(includeAll: boolean, ...args: TechType[]) {
       color: "cyan"
     },
     {
-      label: "TailwindCSS",
-      color: "violet"
-    },
-    {
       label: "JavaScript",
       color: "yellow"
+    },
+    {
+      label: "TailwindCSS",
+      color: "indigo"
     },
     {
       label: "React",
@@ -28,7 +28,7 @@ export function createStack(includeAll: boolean, ...args: TechType[]) {
     },
     {
       label: "TypeScript",
-      color: "indigo"
+      color: "violet"
     },
     {
       label: "MongoDB",
@@ -36,7 +36,7 @@ export function createStack(includeAll: boolean, ...args: TechType[]) {
     },
     {
       label: "Postgres",
-      color: "grape"
+      color: "fuchsia"
     }
   ];
   if (includeAll) return technologies;

@@ -1,100 +1,42 @@
-import { Title, createStyles, Text, Badge, Grid, Avatar, Anchor } from "@mantine/core";
-import { TechStack } from "interfaces";
+import { Image } from "../Image";
 import { createStack } from "util/techStack";
-import { checkTheme } from "util/theme";
-
-const useStyles = createStyles((theme) => ({
-  container: {
-    width: "60%",
-    marginBottom: theme.spacing.xl * 2,
-    [theme.fn.smallerThan("sm")]: {
-      flexDirection: "column-reverse",
-      width: "85%"
-    }
-  },
-  bioContainer: {
-    width: "60%",
-    [theme.fn.smallerThan("sm")]: {
-      width: "100%"
-    }
-  },
-  flex: {
-    display: "flex"
-  },
-  badge: {
-    width: "100%"
-  },
-  iconContainer: {
-    width: "80%",
-    [theme.fn.smallerThan("sm")]: {
-      width: "100%"
-    }
-  },
-  avatarContainer: {
-    justifyContent: "center",
-    flexGrow: 1,
-    [theme.fn.smallerThan("sm")]: {
-      margin: `${theme.spacing.lg}px 0px`,
-      justifyContent: "flex-start"
-    }
-  },
-  article: {
-    color: checkTheme(theme, theme.colors.gray[7], theme.colors.gray[5])
-  },
-  header: {
-    width: "60%"
-  }
-}));
+import styles from "../styles.module.css";
+import { Badge } from "../Badge";
 
 export function Bio() {
-  const { classes, cx } = useStyles();
-  const skills: TechStack[] = createStack(true);
-
+  const skills = createStack(true);
   return (
     <>
-      <header className={classes.header}>
-        <Title mt={"xl"} mb={"sm"} order={1}>
-          Agis Carty
-        </Title>
-      </header>
-      <section className={cx(classes.container, classes.flex)}>
-        <div className={classes.bioContainer}>
-          <Title mb={"md"} order={2}>
-            Up and coming Front-end Developer
-          </Title>
-          <article className={classes.article}>
-            <Text component="p" mb={"md"}>
-              My name is Agis Carty and I&apos;m an aspiring front-end developer. Having been born in the island of{" "}
-              <Anchor
-                target={"_blank"}
-                title={"Wikipedia page for Saint Martin"}
-                href={"https://en.wikipedia.org/wiki/Saint_Martin_(island)"}
-              >
+      <h1 className="font-bold text-5xl mb-5">Agis Carty</h1>
+      <section className="mb-20 w-full">
+        <div className="flex mb-5">
+          <div className="basis-3/5 grow">
+            <h2 className="font-bold text-3xl mb-5">Up and coming Front-end Developer</h2>
+            <p className="leading-loose">
+              My name is Agis Carty and I'm an aspiring front-end developer. Having been born in the island of{" "}
+              <a href={"#"} title={"Wikipedia page for Saint Martin"} className="text-indigo-400 hover:underline">
                 Saint Martin
-              </Anchor>
-              , where programming isn&apos;t a popular topic, I didn&apos;t discover web development until{" "}
-              <time dateTime="2021-10">October 2021</time>. Now I&apos;m dedicated to building fully scalable websites
-              and hopefully introducing more people to the beauty of web development.
-            </Text>
-          </article>
-          <div>
-            <Text component="strong">Here are a few skills I&apos;ve picked up so far:</Text>
-            <Grid mt={"md"} grow className={classes.iconContainer}>
-              {skills.map((skill, index) => {
-                return (
-                  <Grid.Col span={3} key={index}>
-                    <Badge size="lg" className={classes.badge} color={skill.color}>
-                      {skill.label}
-                    </Badge>
-                  </Grid.Col>
-                );
-              })}
-            </Grid>
+              </a>
+              , where programming isn't a popular topic, I didn't discover web development until October 2021. Now I'm
+              dedicated to building <strong>performant</strong> and <strong>accessible</strong> websites, and hopefully
+              introducing more people to the beauty of modern day web development.
+            </p>
           </div>
+          <figure className="basis-2/5 grow flex items-start justify-center">
+            <Image className="rounded-full" src={"/bluepnwage.jpg"} alt={"Profile image"} width={80} height={80} />
+          </figure>
         </div>
-        <figure className={cx(classes.avatarContainer, classes.flex)}>
-          <Avatar alt={"Kirby"} src={"/bluepnwage.jpg"} radius={(1 / 2) * 100} size={90} />
-        </figure>
+        <p className="font-semibold mb-5">Here are a few skills I've picked up so far.</p>
+        <div className="flex w-2/4 gap-4 flex-wrap">
+          {skills.map((skill, index) => {
+            const bg = styles[`badge-${skill.color}`];
+            return (
+              <Badge bgColor={bg} key={index}>
+                {skill.label}
+              </Badge>
+            );
+          })}
+        </div>
       </section>
     </>
   );

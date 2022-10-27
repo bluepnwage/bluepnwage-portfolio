@@ -7,12 +7,12 @@ export interface ProjectObj {
   description: ReactNode;
   href: string;
   techStack: TechStack[];
-  imgSrc: StaticImageData;
+  imgSrc: StaticImageData | string;
 }
 
 export interface TechStack {
   label: TechType;
-  color: MantineColor;
+  color: string;
 }
 
 export type TechType =

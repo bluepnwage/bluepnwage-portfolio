@@ -17,9 +17,11 @@ export async function sendEmail({ email, message, name, subject }: EmailForm) {
     });
     console.log(response.status);
     console.log(response);
-    if (response.status > 400) throw new Error("Email failed to send");
+    if (response.status >= 400) throw new Error("Email failed to send. Please try again later");
     return { isSuccessful: true, message: "Email sent!" };
   } catch (error) {
-    return { isSuccessful: false, message: error };
+    if (error instanceof Error) {
+      return { isSuccessful: false, message: error.message };
+    }
   }
 }
