@@ -2,6 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
+:root.dark {
+  --badge-bg-blue: rgba(79, 70, 229, 0.35);
+  --badge-text-blue: rgb(219, 234, 254);
+  --badge-bg-green: rgba(22, 163, 74, 0.35);
+  --badge-text-green: rgb(220, 252, 231);
+  --badge-bg-cyan: rgba(8, 145, 178, 0.35);
+  --badge-text-cyan: rgb(207, 250, 254);
+  --badge-bg-violet: rgba(124, 58, 237, 0.35);
+  --badge-text-violet: rgb(237, 233, 254);
+  --badge-bg-orange: rgba(234, 88, 12, 0.35);
+  --badge-text-orange: rgb(255, 237, 213);
+  --badge-bg-yellow: rgba(202, 138, 4, 0.35);
+  --badge-text-yellow: rgb(254, 249, 195);
+  --badge-bg-gray: rgba(75, 85, 99, 0.35);
+  --badge-text-gray: rgb(243, 244, 246);
+  --badge-bg-fuchsia: rgba(192, 38, 211, 0.35);
+  --badge-text-fuchsia: rgb(250, 232, 255);
+  --badge-bg-indigo: rgba(79, 70, 229, 0.35);
+  --badge-text-indigo: rgb(224, 231, 255);
+}
+
+:root.light {
+  --badge-text-blue: rgba(79, 70, 229);
+  --badge-bg-blue: rgb(219, 234, 254);
+  --badge-text-green: rgba(22, 163, 74);
+  --badge-bg-green: rgb(220, 252, 231);
+  --badge-text-cyan: rgba(8, 145, 178);
+  --badge-bg-cyan: rgb(207, 250, 254);
+  --badge-text-violet: rgba(124, 58, 237);
+  --badge-bg-violet: rgb(237, 233, 254);
+  --badge-text-orange: rgba(234, 88, 12);
+  --badge-bg-orange: rgb(255, 237, 213);
+  --badge-text-yellow: rgba(202, 138, 4);
+  --badge-bg-yellow: rgb(254, 249, 195);
+  --badge-text-gray: rgba(75, 85, 99);
+  --badge-bg-gray: rgb(243, 244, 246);
+  --badge-text-fuchsia: rgba(192, 38, 211);
+  --badge-bg-fuchsia: rgb(250, 232, 255);
+  --badge-text-indigo: rgba(79, 70, 229);
+  --badge-bg-indigo: rgb(224, 231, 255);
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding: 70px;
@@ -12,8 +54,6 @@ html {
 .light {
   color-scheme: light;
 }
-
-
 
 .section-container {
   display: flex;

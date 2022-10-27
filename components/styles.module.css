@@ -1,37 +1,46 @@
 .badge-blue {
-  background-color: rgba(79, 70, 229, 0.35);
-  color: rgb(219, 234, 254);
+  background-color: var(--badge-bg-blue);
+  color: var(--badge-text-blue);
+  transition: all 200ms ease-out;
 }
 .badge-yellow {
-  background-color: rgba(202, 138, 4, 0.35);
-  color: rgb(254, 249, 195);
+  background-color: var(--badge-bg-yellow);
+  color: var(--badge-text-yellow);
+  transition: all 200ms ease-out;
 }
 .badge-orange {
-  background-color: rgba(234, 88, 12, 0.35);
-  color: rgb(255, 237, 213);
+  background-color: var(--badge-bg-orange);
+  color: var(--badge-text-orange);
+  transition: all 200ms ease-out;
 }
 .badge-violet {
-  background-color: rgba(124, 58, 237, 0.35);
-  color: rgb(237, 233, 254);
+  background-color: var(--badge-bg-violet);
+  color: var(--badge-text-violet);
+  transition: all 200ms ease-out;
 }
 .badge-cyan {
-  background-color: rgba(8, 145, 178, 0.35);
-  color: rgb(207, 250, 254);
+  background-color: var(--badge-bg-cyan);
+  color: var(--badge-text-cyan);
+  transition: all 200ms ease-out;
 }
 .badge-gray {
-  background-color: rgba(75, 85, 99, 0.35);
-  color: rgb(243, 244, 246);
+  background-color: var(--badge-bg-gray);
+  color: var(--badge-text-gray);
+  transition: all 200ms ease-out;
 }
 .badge-green {
-  background-color: rgba(22, 163, 74, 0.35);
-  color: rgb(220, 252, 231);
+  background-color: var(--badge-bg-green);
+  color: var(--badge-text-green);
+  transition: all 200ms ease-out;
 }
 .badge-fuchsia {
-  background-color: rgba(192, 38, 211, 0.35);
-  color: rgb(250, 232, 255);
+  background-color: var(--badge-bg-fuchsia);
+  color: var(--badge-text-fuchsia);
+  transition: all 200ms ease-out;
 }
 
 .badge-indigo {
-  background-color: rgba(79, 70, 229, 0.35);
-  color: rgb(224, 231, 255);
+  background-color: var(--badge-bg-indigo);
+  color: var(--badge-text-indigo);
+  transition: all 200ms ease-out;
 }
