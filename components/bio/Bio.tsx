@@ -1,4 +1,4 @@
-import { Image } from "../Image";
+import Image  from "next/image";
 import { createStack } from "util/techStack";
 import styles from "../styles.module.css";
 import { Badge } from "../Badge";

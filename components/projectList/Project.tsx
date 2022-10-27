@@ -1,6 +1,7 @@
 import type { ProjectObj } from "../../interfaces/index";
 import { Badge } from "../Badge";
 import styles from "../styles.module.css";
+import Image from "next/image";
 
 export function Project({ description, href, imgSrc, techStack, title }: ProjectObj) {
   return (
@@ -24,14 +25,7 @@ export function Project({ description, href, imgSrc, techStack, title }: Project
         </div>
       </div>
       <figure className="basis-2/4 rounded-md overflow-hidden grow aspect-video bg-indigo-600">
-        <img
-          className="w-full h-full"
-          src={imgSrc as string}
-          alt={"Home page for sxm airport"}
-          width={"100%"}
-          height={"100%"}
-          loading="lazy"
-        />
+        <Image className="w-full h-full" src={imgSrc} alt={`Home page for ${title}`} />
       </figure>
     </article>
   );

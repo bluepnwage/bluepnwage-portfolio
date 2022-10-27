@@ -2,6 +2,12 @@ import { ProjectObj } from "interfaces";
 import { createStack } from "util/techStack";
 import { Anchor } from "../Anchor";
 import { Project } from "./Project";
+import sxmAirport from "../../public/sxm-airport.png";
+import sxmPOI from "../../public/sxm-pois.png";
+import chatApp from "../../public/chat-app.png";
+import restaurantBooker from "../../public/restaurant-booker.png";
+import cryptoTracker from "../../public/crypto-tracker.png";
+import blogSocial from "../../public/blog-social.png";
 
 export function ProjectList() {
   return (
@@ -48,7 +54,7 @@ const projects: ProjectObj[] = [
       </p>
     ),
     href: "#",
-    imgSrc: "/sxm-airport.png"
+    imgSrc: sxmAirport
   },
   {
     title: "SXM POI Locator",
@@ -79,7 +85,7 @@ const projects: ProjectObj[] = [
     ),
     href: "https://sxm-pois.vercel.app/",
     techStack: createStack(false, "Next.Js", "JavaScript", "Postgres"),
-    imgSrc: "/sxm-pois.png"
+    imgSrc: sxmPOI
   },
   {
     title: "Crypto Tracker",
@@ -94,7 +100,7 @@ const projects: ProjectObj[] = [
       </p>
     ),
     href: "https://bluepnwage-crypto-tracker.vercel.app/",
-    imgSrc: "/crypto-tracker.png",
+    imgSrc: cryptoTracker,
     techStack: createStack(false, "Next.Js", "TypeScript")
   },
   {
@@ -120,7 +126,7 @@ const projects: ProjectObj[] = [
       </p>
     ),
     href: "https://blog-social-jade.vercel.app/",
-    imgSrc: "/blog-social.png",
+    imgSrc: blogSocial,
     techStack: createStack(false, "TypeScript", "Next.Js", "Postgres")
   },
   {
@@ -143,13 +149,13 @@ const projects: ProjectObj[] = [
       </>
     ),
     href: "https://chat-app2-nu.vercel.app/",
-    imgSrc: "/chat-app.png",
+    imgSrc: chatApp,
     techStack: createStack(false, "Next.Js", "TypeScript", "Postgres")
   },
   {
     title: "Feliciano Restaurant",
     href: "https://restaurant-booker.vercel.app/",
-    imgSrc: "/restaurant-booker.png",
+    imgSrc: restaurantBooker,
     description: (
       <p className="mb-2">
         This project was built so that I could practise optimizing performance when dealing with large images, setting

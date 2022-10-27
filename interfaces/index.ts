@@ -1,4 +1,3 @@
-import type { MantineColor } from "@mantine/core";
 import type { StaticImageData } from "next/image";
 import type { ReactNode } from "react";
 
@@ -7,7 +6,7 @@ export interface ProjectObj {
   description: ReactNode;
   href: string;
   techStack: TechStack[];
-  imgSrc: StaticImageData | string;
+  imgSrc: StaticImageData;
 }
 
 export interface TechStack {
