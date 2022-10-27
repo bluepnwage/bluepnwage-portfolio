@@ -1,11 +1,11 @@
-import { Image, Text, Center } from "@mantine/core";
+// import { Image, Text, Center } from "@mantine/core";
 import { SpotifyData } from "../SpotifySong";
 
 export function MobileSpotify({ albumImageUrl, title, album, artist }: SpotifyData) {
   return (
     <>
       <div>
-        <Text align="center" mb={"md"}>
+        {/* <Text align="center" mb={"md"}>
           Listening to:
         </Text>
         <Center>
@@ -22,7 +22,7 @@ export function MobileSpotify({ albumImageUrl, title, album, artist }: SpotifyDa
           <Text mt={"md"} component="p">
             {title} - {artist}
           </Text>
-        </Center>
+        </Center> */}
       </div>
     </>
   );
