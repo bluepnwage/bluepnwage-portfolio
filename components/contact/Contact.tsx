@@ -34,7 +34,7 @@ function ContactInfo({ label, contact, icon }: PropTypes) {
       {icon}
       <div>
         <span className="text-sm block">{label}</span>
-        <a href={"#"} target={"_blank"} className="font-semibold">
+        <a href={"#"} rel="noreferrer" target={"_blank"} className="font-semibold">
           {contact}
         </a>
       </div>
