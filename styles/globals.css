@@ -54,9 +54,3 @@ html {
 .light {
   color-scheme: light;
 }
-
-.section-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}

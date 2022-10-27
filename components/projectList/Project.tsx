@@ -1,6 +1,5 @@
 import type { ProjectObj } from "../../interfaces/index";
 import { Badge } from "../Badge";
-import styles from "../styles.module.css";
 import Image from "next/image";
 
 export function Project({ description, href, imgSrc, techStack, title }: ProjectObj) {
@@ -15,9 +14,8 @@ export function Project({ description, href, imgSrc, techStack, title }: Project
         <strong className="my-2 block">Technologies used</strong>
         <div className="flex gap-4 mb-2 justify-center flex-wrap w-full">
           {techStack.map((skill, index) => {
-            const bg = styles[`badge-${skill.color}`];
             return (
-              <Badge key={index} bgColor={bg}>
+              <Badge key={index} color={skill.color}>
                 {skill.label}
               </Badge>
             );

@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { createStack } from "util/techStack";
-import styles from "../styles.module.css";
 import { Badge } from "../Badge";
 
 export function Bio() {
@@ -32,9 +31,8 @@ export function Bio() {
           <p className="font-semibold mb-5">Here are a few skills I&apos;ve picked up so far.</p>
           <div className="flex w-full md:w-2/4 flex-wrap gap-4">
             {skills.map((skill, index) => {
-              const bg = styles[`badge-${skill.color}`];
               return (
-                <Badge bgColor={bg} key={index}>
+                <Badge color={skill.color} key={index}>
                   {skill.label}
                 </Badge>
               );

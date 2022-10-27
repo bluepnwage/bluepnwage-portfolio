@@ -10,12 +10,8 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.6.2",
-    "@emotion/react": "^11.10.0",
-    "@emotion/server": "^11.10.0",
-    "@mantine/core": "^5.5.5",
     "@mantine/hooks": "^5.5.5",
-    "@mantine/next": "^5.5.5",
-    "@mantine/notifications": "^5.5.5",
+    "framer-motion": "^7.6.2",
     "next": "^13.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

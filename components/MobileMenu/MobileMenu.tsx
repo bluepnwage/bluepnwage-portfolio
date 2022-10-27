@@ -1,41 +1,19 @@
-import SpotifySong from "../SpotifySong";
-import { Drawer, Burger, Anchor, Container, Group, Center, Stack } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
-import { useStyles } from "./styles";
+"use client";
+// import SpotifySong from "../SpotifySong";
+import { useState } from "react";
+import { Menu2, X } from "tabler-icons-react";
 
 export default function MobileMenu() {
-  const [opened, handler] = useDisclosure(false);
-  const { classes } = useStyles();
+  const [drawer, setDrawer] = useState(false);
+  const toggleDrawer = () => {
+    setDrawer((prev) => !prev);
+  };
+
   return (
     <>
-      <Burger opened={opened} onClick={handler.open} />
-      <Drawer
-        classNames={{ header: classes.drawerHeader }}
-        title={"Navigation"}
-        zIndex={505}
-        size={"xl"}
-        onClose={handler.close}
-        opened={opened}
-      >
-        <Container>
-          <Center mb={"lg"}>
-            <Stack>
-              <Anchor onClick={handler.close} href={"#"}>
-                About
-              </Anchor>
-              <Anchor onClick={handler.close} href={"#projects"}>
-                Projects
-              </Anchor>
-              <Anchor onClick={handler.close} href={"#contact"}>
-                Contact
-              </Anchor>
-            </Stack>
-          </Center>
-          <Group>
-            <SpotifySong mobile={true} />
-          </Group>
-        </Container>
-      </Drawer>
+      <button aria-label="Open navigation" onClick={toggleDrawer}>
+        {drawer ? <X /> : <Menu2 />}
+      </button>
     </>
   );
 }
