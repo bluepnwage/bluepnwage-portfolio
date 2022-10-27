@@ -16,9 +16,9 @@ export default function RootLayout({ children }) {
         <meta property="og:image" content="https://bluepnwage-portfolio.vercel.app/bluepnwage.jpg" />
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className="bg-zinc-900 flex flex-col items-center">
+      <body className="bg-zinc-900">
         <Header />
-        <main className="w-3/5">{children}</main>
+        <main>{children}</main>
       </body>
     </html>
   );

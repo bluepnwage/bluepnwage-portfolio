@@ -5,8 +5,8 @@ import Image from "next/image";
 
 export function Project({ description, href, imgSrc, techStack, title }: ProjectObj) {
   return (
-    <article className="flex items-start gap-2 ">
-      <div className="basis-2/4 w-2/4 grow">
+    <article className="flex flex-col-reverse md:flex-row items-start gap-2 ">
+      <div className="basis-2/4 md:w-2/4 grow">
         <h3 className="font-bold text-2xl mb-2">{title}</h3>
         {description}
         <a href={href} className="text-indigo-400 mb-2">
@@ -24,7 +24,7 @@ export function Project({ description, href, imgSrc, techStack, title }: Project
           })}
         </div>
       </div>
-      <figure className="basis-2/4 rounded-md overflow-hidden grow aspect-video bg-indigo-600">
+      <figure className="basis-2/4 rounded-md overflow-hidden grow aspect-video">
         <Image className="w-full h-full" src={imgSrc} alt={`Home page for ${title}`} />
       </figure>
     </article>

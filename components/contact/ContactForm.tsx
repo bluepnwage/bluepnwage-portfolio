@@ -11,7 +11,7 @@ export function ContactForm() {
   };
   return (
     <form className="space-y-4" onSubmit={handleSubmit}>
-      <h3 className="text-2xl mb-2 font-bold text-center">Get in touch</h3>
+      <h3 className="text-2xl mb-2 font-bold text-center">Send me an email</h3>
       <p className="space-y-2">
         <label htmlFor="name" className="block">
           Name{" "}

@@ -11,11 +11,11 @@ import blogSocial from "../../public/blog-social.png";
 
 export function ProjectList() {
   return (
-    <section className="mb-20">
+    <section className="mb-20 flex flex-col items-center">
       <header className="mb-5">
         <h2 className="font-bold text-3xl">Personal Projects</h2>
       </header>
-      <div className="flex flex-col gap-16">
+      <div className="flex w-4/5 md:w-3/5 flex-col gap-16">
         {projects.map((project, index) => {
           return <Project {...project} key={index} />;
         })}
