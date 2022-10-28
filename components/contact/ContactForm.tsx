@@ -20,7 +20,7 @@ export function ContactForm() {
           </span>
         </label>
         <input
-          className="appearance-none outline-none rounded-sm px-4 py-1 border w-full border-zinc-600 focus:border-indigo-400"
+          className="appearance-none outline-none rounded-sm px-4 py-1 border w-full dark:border-zinc-600 focus:border-indigo-400"
           placeholder="Agis Carty"
           name="name"
           type="text"
@@ -37,7 +37,7 @@ export function ContactForm() {
           </span>
         </label>
         <input
-          className="appearance-none outline-none rounded-sm px-4 py-1 border w-full border-zinc-600 focus:border-indigo-400"
+          className="appearance-none outline-none rounded-sm px-4 py-1 border w-full dark:border-zinc-600 focus:border-indigo-400"
           placeholder="example@example.com"
           name="email"
           type="email"
@@ -50,7 +50,7 @@ export function ContactForm() {
           Subject{" "}
         </label>
         <input
-          className="appearance-none outline-none rounded-sm px-4 py-1 border w-full border-zinc-600 focus:border-indigo-400"
+          className="appearance-none outline-none rounded-sm px-4 py-1 border w-full dark:border-zinc-600 focus:border-indigo-400"
           name="subject"
           type="text"
           id="subject"
@@ -62,7 +62,7 @@ export function ContactForm() {
           Message <span className="text-red-500">*</span>
         </label>
         <textarea
-          className="border border-zinc-600 rounded-sm px-4 py-1 w-full appearance-none outline-none focus:border-indigo-400"
+          className="border dark:border-zinc-600 rounded-sm px-4 py-1 w-full appearance-none outline-none focus:border-indigo-400"
           id="message"
           name="message"
           required

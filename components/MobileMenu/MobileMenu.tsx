@@ -1,19 +1,12 @@
-"use client";
-// import SpotifySong from "../SpotifySong";
-import { useState } from "react";
-import { Menu2, X } from "tabler-icons-react";
+import { Drawer } from "./Drawer";
+import { Suspense } from "react";
 
-export default function MobileMenu() {
-  const [drawer, setDrawer] = useState(false);
-  const toggleDrawer = () => {
-    setDrawer((prev) => !prev);
-  };
-
+export function MobileMenu() {
   return (
     <>
-      <button aria-label="Open navigation" onClick={toggleDrawer}>
-        {drawer ? <X /> : <Menu2 />}
-      </button>
+      <Suspense>
+        <Drawer />
+      </Suspense>
     </>
   );
 }
