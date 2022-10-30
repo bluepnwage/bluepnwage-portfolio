@@ -2,7 +2,6 @@
 import useSWR, { Fetcher } from "swr";
 import { BrandSpotify } from "tabler-icons-react";
 import { Anchor } from "./Anchor";
-// import { MobileSpotify } from "./MobileMenu/MobileSpotify";
 
 export interface SpotifyData {
   isPlaying: boolean;
@@ -20,19 +19,23 @@ const fetcher: Fetcher<SpotifyData> = (url: string) =>
 
 export function SpotifySong() {
   const { data } = useSWR("/api/spotify", fetcher, { refreshInterval: 30000 });
-  if (!data) return <p>Loading...</p>;
-  // if (mobile && data.isPlaying) return <MobileSpotify {...data} />;
+  if (!data) return <p className="hidden md:block">Loading...</p>;
   return (
     <>
       {data.isPlaying && (
         <>
           {data.isPlaying && (
-            <Anchor target={"_blank"} href={data.songUrl}>
+            <a
+              className="hidden md:block text-indigo-400 hover:underline"
+              rel="noreferrer"
+              target={"_blank"}
+              href={data.songUrl}
+            >
               {data.title} - {data.artist}
-            </Anchor>
+            </a>
           )}
           {!data.isPlaying && <p>Not playing music</p>}
-          <div aria-hidden className="bg-green-700 rounded-md p-1">
+          <div aria-hidden className="bg-green-700 hidden md:block rounded-md p-1">
             <BrandSpotify />
           </div>
         </>

@@ -11,7 +11,7 @@ import blogSocial from "../../public/blog-social.png";
 
 export function ProjectList() {
   return (
-    <section className="mb-20 flex flex-col items-center">
+    <section id={'projects'} className="mb-20 flex flex-col items-center">
       <header className="mb-5">
         <h2 className="font-bold text-3xl">Personal Projects</h2>
       </header>

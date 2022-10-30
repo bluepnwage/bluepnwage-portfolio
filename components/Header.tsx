@@ -10,9 +10,9 @@ export default function Header() {
       <nav className="w-4/5 md:min-w-3/5 flex justify-between items-center">
         <MobileMenu />
         <div className="md:flex gap-10 hidden">
-          <Link href={"#"}>About</Link>
-          <Link href={"#"}>Projects</Link>
-          <Link href={"#"}>Contact</Link>
+          <Link href={"#about"}>About</Link>
+          <Link href={"#projects"}>Projects</Link>
+          <Link href={"#contact"}>Contact</Link>
         </div>
         <div className="flex gap-5 items-center">
           <Suspense fallback={null}>

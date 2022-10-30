@@ -4,7 +4,7 @@ import { ContactForm } from "./ContactForm";
 
 export function Contact() {
   return (
-    <section className="mb-20 flex-col flex items-center">
+    <section id={'contact'} className="mb-20 flex-col flex items-center">
       <h2 className="font-bold text-3xl mb-5">Let&apos;s get in touch</h2>
       <div className="p-2 flex flex-col md:flex-row w-11/12 md:w-3/5 bg-gray-50 text-gray-100 dark:bg-zinc-800 rounded-lg">
         <div className="basis-2/5 rounded-lg bg-gradient-to-br p-4 from-blue-500 to-cyan-500 grow">

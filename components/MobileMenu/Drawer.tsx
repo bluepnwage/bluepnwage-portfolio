@@ -2,6 +2,7 @@
 import { Menu2, X } from "tabler-icons-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { MobileSpotify } from "./MobileSpotify";
 export function Drawer() {
   const [menu, setMenu] = useState(false);
   const toggleMenu = () => {
@@ -39,22 +40,16 @@ export function Drawer() {
             <div className="flex flex-col gap-10 items-center">
               <ul onClick={() => setMenu(false)} className="text-center space-y-2">
                 <li>
-                  <a href={"#test"}>About</a>
+                  <a href={"#about"}>About</a>
                 </li>
                 <li>
-                  <a href={"#test2"}>Projects</a>
+                  <a href={"#projects"}>Projects</a>
                 </li>
                 <li>
-                  <a href={"#test3"}>Contact</a>
+                  <a href={"#contact"}>Contact</a>
                 </li>
               </ul>
-              <p className="text-gray-900 dark:text-gray-300">Listening to:</p>
-              <figure className="space-y-2 w-3/5">
-                <div className="bg-indigo-600 w-full aspect-square"></div>
-                <figcaption className="block text-center dark:text-gray-300 text-gray-900">
-                  Ariana Grande - Positions
-                </figcaption>
-              </figure>
+              <MobileSpotify />
             </div>
           </motion.div>
         )}
