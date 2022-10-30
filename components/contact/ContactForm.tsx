@@ -68,7 +68,7 @@ export function ContactForm() {
           required
         />
       </p>
-      <button className="px-4 py-2 rounded-md block bg-indigo-600 text-gray-200 font-semibold text-lg uppercase mx-auto relative active:top-[2px]">
+      <button className="px-4 py-2 rounded-md block bg-gradient-to-r to-cyan-400 from-blue-500  text-gray-200 font-semibold text-lg uppercase mx-auto relative active:top-[2px]">
         Submit
       </button>
     </form>
