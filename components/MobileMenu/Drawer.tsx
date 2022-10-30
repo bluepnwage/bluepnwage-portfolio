@@ -10,7 +10,11 @@ export function Drawer() {
   };
   return (
     <>
-      <button className="md:hidden text-gray-300 px-4 py-2" onClick={toggleMenu}>
+      <button
+        aria-label={menu ? "Close navigation" : "Open navigation"}
+        className="md:hidden text-gray-300 px-4 py-2"
+        onClick={toggleMenu}
+      >
         {menu ? <X /> : <Menu2 />}
       </button>
       <AnimatePresence>
