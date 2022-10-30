@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import Header from "../components/Header";
 import "react-toastify/dist/ReactToastify.css";
-
+import { AnalyticsWrapper } from "../components/AnalyticsWrapper";
 
 export default function RootLayout({ children }) {
   return (
@@ -21,6 +21,7 @@ export default function RootLayout({ children }) {
       <body className="dark:bg-zinc-900 duration-200 ease-out dark:text-gray-300 text-gray-900">
         <Header />
         <main>{children}</main>
+        <AnalyticsWrapper />
       </body>
     </html>
   );
