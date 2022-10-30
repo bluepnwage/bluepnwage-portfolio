@@ -32,8 +32,8 @@ export function SpotifySong() {
         </a>
       )}
       {!data.isPlaying && <p className="hidden md:block">Not playing music</p>}
-      <div aria-hidden className="bg-green-700 hidden md:block rounded-md p-1">
-        <BrandSpotify />
+      <div aria-hidden className="bg-green-700 hidden md:block text-gray-300 rounded-md p-1">
+        <BrandSpotify className="text-gray-300" />
       </div>
     </>
   );

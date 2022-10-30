@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { createStack } from "util/techStack";
 import { Badge } from "../Badge";
-
+import { Anchor } from "../Anchor";
 export function Bio() {
   const skills = createStack(true);
   return (
@@ -9,15 +9,15 @@ export function Bio() {
       <header className="flex flex-col items-center">
         <h1 className="font-bold text-center md:text-start w-4/5 md:w-3/5 text-5xl mb-10 md:mb-5">Agis Carty</h1>
       </header>
-      <section id='about' className="mb-20 flex flex-col items-center">
+      <section id="about" className="mb-20 flex flex-col items-center">
         <div className="flex md:flex-row w-4/5 md:w-3/5 flex-col-reverse mb-5">
           <div className="basis-3/5 grow">
             <h2 className="font-bold text-center md:text-start text-3xl mb-5">Up and coming Front-end Developer</h2>
             <p className="leading-loose">
               My name is Agis Carty and I&apos;m an aspiring front-end developer. Having been born in the island of{" "}
-              <a href={"#"} title={"Wikipedia page for Saint Martin"} className="text-indigo-400 hover:underline">
+              <Anchor href={"#"} title={"Wikipedia page for Saint Martin"} target={"_blank"}>
                 Saint Martin
-              </a>
+              </Anchor>
               , where programming isn&apos;t a popular topic, I didn&apos;t discover web development until October 2021.
               Now I&apos;m dedicated to building <strong>performant</strong> and <strong>accessible</strong> websites,
               and hopefully introducing more people to the beauty of modern day web development.

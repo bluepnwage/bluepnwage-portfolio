@@ -1,6 +1,7 @@
 import type { ProjectObj } from "../../interfaces/index";
 import { Badge } from "../Badge";
 import Image from "next/image";
+import { Anchor } from "../Anchor";
 
 export function Project({ description, href, imgSrc, techStack, title }: ProjectObj) {
   return (
@@ -8,9 +9,9 @@ export function Project({ description, href, imgSrc, techStack, title }: Project
       <div className="basis-2/4 md:w-2/4 grow">
         <h3 className="font-bold text-2xl mb-2">{title}</h3>
         {description}
-        <a href={href} className="text-indigo-400 mb-2">
+        <Anchor href={href} target={"_blank"}>
           Link to website
-        </a>
+        </Anchor>
         <strong className="my-2 block">Technologies used</strong>
         <div className="flex gap-4 mb-2 justify-center flex-wrap w-full">
           {techStack.map((skill, index) => {
