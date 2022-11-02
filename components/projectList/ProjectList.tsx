@@ -53,7 +53,7 @@ const projects: ProjectObj[] = [
         Doing this gives me time to review and approve of all uploaded images.
       </p>
     ),
-    href: "#",
+    href: "https://sxm-airport.vercel.app",
     imgSrc: sxmAirport
   },
   {
