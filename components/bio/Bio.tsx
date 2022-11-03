@@ -14,13 +14,10 @@ export function Bio() {
           <div className="basis-3/5 grow">
             <h2 className="font-bold text-center md:text-start text-3xl mb-5">Up and coming Front-end Developer</h2>
             <p className="leading-loose">
-              My name is Agis Carty and I&apos;m an aspiring front-end developer. Having been born in the island of{" "}
-              <Anchor href={"#"} title={"Wikipedia page for Saint Martin"} target={"_blank"}>
-                Saint Martin
-              </Anchor>
-              , where programming isn&apos;t a popular topic, I didn&apos;t discover web development until October 2021.
-              Now I&apos;m dedicated to building <strong>performant</strong> and <strong>accessible</strong> websites,
-              and hopefully introducing more people to the beauty of modern day web development.
+              My name is Agis Carty and I&apos;m an aspiring front-end developer. I discovered programming, which is an
+              ever-growing topic in <Anchor>Saint Martin</Anchor>, in October 2021. Now I&apos;m dedicated to building{" "}
+              <strong>performant</strong> and <strong>accessible</strong> websites, and hopefully introducing more
+              people to the beauty of modern day web development.
             </p>
           </div>
           <figure className="basis-2/5 grow mb-2 md:mb-0 flex items-start justify-center">
