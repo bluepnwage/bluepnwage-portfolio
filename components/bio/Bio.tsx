@@ -12,16 +12,24 @@ export function Bio() {
       <section id="about" className="mb-20 flex flex-col items-center">
         <div className="flex md:flex-row w-4/5 md:w-3/5 flex-col-reverse mb-5">
           <div className="basis-3/5 grow">
-            <h2 className="font-bold text-center md:text-start text-3xl mb-5">Up and coming Front-end Developer</h2>
+            <h2 className="font-bold text-center md:text-start text-3xl mb-5">Aspiring Front-end Developer</h2>
             <p className="leading-loose">
-              My name is Agis Carty and I&apos;m an aspiring front-end developer. I discovered programming, which is an
-              ever-growing topic in <Anchor>Saint Martin</Anchor>, in October 2021. Now I&apos;m dedicated to building{" "}
-              <strong>performant</strong> and <strong>accessible</strong> websites, and hopefully introducing more
-              people to the beauty of modern day web development.
+              My name is Agis Carty and I&apos;m an aspiring front-end developer. From the moment I discovered
+              programming, which is an ever-growing topic in{" "}
+              <Anchor
+                rel={"noreferrer"}
+                target={"_blank"}
+                title={"Wikipedia page for Saint Martin"}
+                href={"https://en.wikipedia.org/wiki/Saint_Martin_(island)"}
+              >
+                Saint Martin
+              </Anchor>
+              , I&apos;ve become dedicated to building <strong>performant</strong> and <strong>accessible</strong>{" "}
+              websites, and hopefully introducing more people to the beauty of modern day web development.
             </p>
           </div>
           <figure className="basis-2/5 grow mb-2 md:mb-0 flex items-start justify-center">
-            <Image className="rounded-full" src={"/bluepnwage.jpg"} alt={"Profile image"} width={80} height={80} />
+            <Image className="rounded-full" src={"/logo-icon.svg"} alt={"Logo"} width={80} height={80} />
           </figure>
         </div>
         <div className="w-4/5 md:w-3/5">

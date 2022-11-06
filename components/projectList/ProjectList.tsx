@@ -11,7 +11,7 @@ import blogSocial from "../../public/blog-social.png";
 
 export function ProjectList() {
   return (
-    <section id={'projects'} className="mb-20 flex flex-col items-center">
+    <section id={"projects"} className="mb-20 flex flex-col items-center">
       <header className="mb-5">
         <h2 className="font-bold text-3xl">Personal Projects</h2>
       </header>
@@ -31,21 +31,21 @@ const projects: ProjectObj[] = [
     description: (
       <p className="mb-2">
         This project allows you to view the daily schedule for all arrivals and departures concerning{" "}
-        <Anchor href={"#"} title={"Official website for princess Juliana Airport"}>
+        <Anchor href={"https://www.sxmairport.com/"} title={"Official website for princess Juliana Airport"}>
           Princess Juliana Airport
         </Anchor>
         . There is also an interactive map, powered by{" "}
-        <Anchor href={"#"} title={"Official website for mapbox"}>
+        <Anchor href={"https://www.mapbox.com/"} title={"Official website for mapbox"}>
           mapbox
         </Anchor>
         , which can be used to track live flights that are currently flying towards Sint Maarten. Finally, there is a
         gallery to view images of the airport. Users can sign up and upload their own images to the gallery if they wish
         to do so. Everything from authentication, to storing images and saving data is handled thanks to{" "}
-        <Anchor href={"#"} title={"Official website for firebase"}>
+        <Anchor href={"https://firebase.google.com/"} title={"Official website for firebase"}>
           Firebase
         </Anchor>
         . I made use of caching responses by setting HTTP headers combined with{" "}
-        <Anchor href={"#"} title={"Official website for redis"}>
+        <Anchor href={"https://redis.io/"} title={"Official website for redis"}>
           Redis
         </Anchor>
         , to ensure the server does not make any unecessary requests knowing the airport schedule is most likely updated
@@ -163,8 +163,8 @@ const projects: ProjectObj[] = [
         <Anchor href={"https://www.framer.com/motion/"} target={"_blank"}>
           Framer motion
         </Anchor>
-        , and allowing users to set up reservations online and storing the information in a MongoDB database. I also
-        practiced using scheduled functions to <strong>automatically</strong> remove all passed reservations in the
+        , and provide users the option to reserve a table online, then storing the information in a MongoDB database. I
+        also practiced using scheduled functions to <strong>automatically</strong> remove all passed reservations in the
         database.
       </p>
     ),
