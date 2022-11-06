@@ -31,21 +31,36 @@ const projects: ProjectObj[] = [
     description: (
       <p className="mb-2">
         This project allows you to view the daily schedule for all arrivals and departures concerning{" "}
-        <Anchor href={"https://www.sxmairport.com/"} title={"Official website for princess Juliana Airport"}>
+        <Anchor
+          target={"_blank"}
+          rel={"noreferrer"}
+          href={"https://www.sxmairport.com/"}
+          title={"Official website for princess Juliana Airport"}
+        >
           Princess Juliana Airport
         </Anchor>
         . There is also an interactive map, powered by{" "}
-        <Anchor href={"https://www.mapbox.com/"} title={"Official website for mapbox"}>
+        <Anchor
+          target={"_blank"}
+          rel={"noreferrer"}
+          href={"https://www.mapbox.com/"}
+          title={"Official website for mapbox"}
+        >
           mapbox
         </Anchor>
         , which can be used to track live flights that are currently flying towards Sint Maarten. Finally, there is a
         gallery to view images of the airport. Users can sign up and upload their own images to the gallery if they wish
         to do so. Everything from authentication, to storing images and saving data is handled thanks to{" "}
-        <Anchor href={"https://firebase.google.com/"} title={"Official website for firebase"}>
+        <Anchor
+          target={"_blank"}
+          rel={"noreferrer"}
+          href={"https://firebase.google.com/"}
+          title={"Official website for firebase"}
+        >
           Firebase
         </Anchor>
         . I made use of caching responses by setting HTTP headers combined with{" "}
-        <Anchor href={"https://redis.io/"} title={"Official website for redis"}>
+        <Anchor target={"_blank"} rel={"noreferrer"} href={"https://redis.io/"} title={"Official website for redis"}>
           Redis
         </Anchor>
         , to ensure the server does not make any unecessary requests knowing the airport schedule is most likely updated
