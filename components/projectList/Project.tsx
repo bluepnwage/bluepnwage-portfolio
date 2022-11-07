@@ -10,7 +10,7 @@ export function Project({ description, href, imgSrc, techStack, title }: Project
         <h3 className="font-bold text-2xl mb-2">{title}</h3>
         {description}
         <Anchor href={href} target={"_blank"}>
-          Link to website
+          Link to project
         </Anchor>
         <strong className="my-2 block">Technologies used</strong>
         <div className="flex gap-4 mb-2 justify-center flex-wrap w-full">

@@ -31,14 +31,7 @@ const projects: ProjectObj[] = [
     description: (
       <p className="mb-2">
         This project allows you to view the daily schedule for all arrivals and departures concerning{" "}
-        <Anchor
-          target={"_blank"}
-          rel={"noreferrer"}
-          href={"https://www.sxmairport.com/"}
-          title={"Official website for princess Juliana Airport"}
-        >
           Princess Juliana Airport
-        </Anchor>
         . There is also an interactive map, powered by{" "}
         <Anchor
           target={"_blank"}
