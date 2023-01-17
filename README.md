@@ -3,7 +3,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Technologies Used
 
 - Framework: [Next.js](https://nextjs.org/)
-- Styling: [Mantine](https://mantine.dev/)
+- Styling: [TailwindCSS](https://tailwindcss.com/)
 - Data fetching: [SWR](https://swr.vercel.app/)
 - Sending emails: [EmailJS](https://www.emailjs.com/)
 
