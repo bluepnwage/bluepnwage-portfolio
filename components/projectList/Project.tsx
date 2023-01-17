@@ -31,12 +31,12 @@ export function Project({ project }: PropTypes) {
       </div>
       <figure className="basis-2/4 rounded-md overflow-hidden grow aspect-video">
         <Image
-          className="w-full h-full"
+          className="w-full h-full object-cover"
           src={
             project.properties.Thumbnail.files[0].type === "file" ? project.properties.Thumbnail.files[0].file.url! : ""
           }
-          width={100}
-          height={100}
+          width={1200}
+          height={800}
           alt={`Home page for ${title}`}
         />
       </figure>
