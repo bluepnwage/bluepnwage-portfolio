@@ -8,8 +8,13 @@ import chatApp from "../../public/chat-app.png";
 import restaurantBooker from "../../public/restaurant-booker.png";
 import cryptoTracker from "../../public/crypto-tracker.png";
 import blogSocial from "../../public/blog-social.png";
+import { NotionResponse } from "util/notion";
 
-export function ProjectList() {
+type PropTypes = {
+  projects: NotionResponse[];
+};
+
+export function ProjectList({ projects }: PropTypes) {
   return (
     <section id={"projects"} className="mb-20 flex flex-col items-center">
       <header className="mb-5">
@@ -17,7 +22,7 @@ export function ProjectList() {
       </header>
       <div className="flex w-4/5 md:w-3/5 flex-col gap-16">
         {projects.map((project, index) => {
-          return <Project {...project} key={index} />;
+          return <Project project={project} key={index} />;
         })}
       </div>
     </section>
@@ -30,9 +35,8 @@ const projects: ProjectObj[] = [
     techStack: createStack(false, "Next.Js", "TypeScript"),
     description: (
       <p className="mb-2">
-        This project allows you to view the daily schedule for all arrivals and departures concerning{" "}
-          Princess Juliana Airport
-        . There is also an interactive map, powered by{" "}
+        This project allows you to view the daily schedule for all arrivals and departures concerning Princess Juliana
+        Airport . There is also an interactive map, powered by{" "}
         <Anchor
           target={"_blank"}
           rel={"noreferrer"}
