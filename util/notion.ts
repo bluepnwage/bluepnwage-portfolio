@@ -4,7 +4,8 @@ import type {
   TextRichTextItemResponse,
   FilesPropertyItemObjectResponse,
   UrlPropertyItemObjectResponse,
-  ParagraphBlockObjectResponse
+  ParagraphBlockObjectResponse,
+  ListBlockChildrenResponse
 } from "@notionhq/client/build/src/api-endpoints";
 import { TechStack, TechType } from "interfaces";
 import { createStack } from "./techStack";
@@ -37,35 +38,15 @@ export async function getContent() {
   for (const result of pages.results) {
     pageIds.push(result.id);
   }
-  const t = await Promise.all(pageIds.map((id) => notion.pages.retrieve({ page_id: id })));
+  const pageBlocks = await Promise.all(pageIds.map((id) => notion.pages.retrieve({ page_id: id })));
   const content: NotionContent[] = [];
-  for (const te of t) {
-    const page = te as any as NotionResponse;
-    const description = await notion.blocks.children.list({ block_id: te.id });
-    console.log(description);
-    let textDescription = ``;
-    for (const block of description.results) {
-      const text = block as any as ParagraphBlockObjectResponse;
-      console.log(text);
-      for (const content of text.paragraph.rich_text) {
-        let textToAdd: string = "";
-        if (content.type === "text") {
-          if (content.text.link) {
-            textToAdd = `<a class="dark:text-indigo-400 text-indigo-600 hover:underline" target="_blank" href="${content.text.link.url}">${content.text.content}</a>`;
-          } else {
-            textToAdd = content.text.content;
-          }
-        }
-
-        textDescription += textToAdd;
-      }
-      console.log(textDescription);
-    }
+  for (const p of pageBlocks) {
+    const page = p as any as NotionResponse;
+    const description = await notion.blocks.children.list({ block_id: p.id });
     const image = page.properties.Thumbnail.files[0];
-
     content.push({
       title: page.properties.Name.title[0].plain_text,
-      description: textDescription,
+      description: createDescription(description),
       image: image.type === "file" ? image.file.url : image.type === "external" ? image.external.url : "",
       tags: createTags(page.properties.Tags),
       url: page.properties.URL.url || ""
@@ -77,4 +58,24 @@ export async function getContent() {
 function createTags(tags: PersonalProjects["Tags"]) {
   const stack = createStack(false, ...tags.multi_select.map(({ name }) => name as TechType));
   return stack;
+}
+
+function createDescription(block: ListBlockChildrenResponse) {
+  let description = "";
+  for (const children of block.results) {
+    const text = children as any as ParagraphBlockObjectResponse;
+    for (const content of text.paragraph.rich_text) {
+      let textToAdd: string = "";
+      if (content.type === "text") {
+        if (content.text.link) {
+          textToAdd = `<a class="dark:text-indigo-400 text-indigo-600 hover:underline" target="_blank" href="${content.text.link.url}">${content.text.content}</a>`;
+        } else {
+          textToAdd = content.text.content;
+        }
+      }
+
+      description += textToAdd;
+    }
+  }
+  return description;
 }
