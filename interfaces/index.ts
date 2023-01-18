@@ -1,21 +1,12 @@
-import type { StaticImageData } from "next/image";
-import type { ReactNode } from "react";
-
-export interface ProjectObj {
-  title: string;
-  description: ReactNode;
-  href: string;
-  techStack: TechStack[];
-  imgSrc: StaticImageData;
-}
+import type { Colors } from "components/Badge";
 
 export interface TechStack {
   label: TechType;
-  color: string;
+  color: Colors;
 }
 
 export type TechType =
-  | "Next.Js"
+  | "Next.js"
   | "JavaScript"
   | "HTML"
   | "CSS"
@@ -24,11 +15,6 @@ export type TechType =
   | "React"
   | "TypeScript"
   | "TailwindCSS";
-
-export interface ClientProjectObj extends Omit<ProjectObj, "techStack" | "href"> {
-  status: "In progress" | "Completed";
-  websiteType: string;
-}
 
 export interface EmailForm {
   name: string;

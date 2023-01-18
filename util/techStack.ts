@@ -23,7 +23,7 @@ export function createStack(includeAll: boolean, ...args: TechType[]) {
       color: "blue"
     },
     {
-      label: "Next.Js",
+      label: "Next.js",
       color: "gray"
     },
     {

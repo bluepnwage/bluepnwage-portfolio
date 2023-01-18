@@ -4,8 +4,11 @@ import type {
   TextRichTextItemResponse,
   FilesPropertyItemObjectResponse,
   UrlPropertyItemObjectResponse,
-  FileBlockObjectResponse
+  ParagraphBlockObjectResponse
 } from "@notionhq/client/build/src/api-endpoints";
+import { TechStack, TechType } from "interfaces";
+import { createStack } from "./techStack";
+
 const notion = new Client({ auth: process.env.NOTION_KEY });
 const database_id = process.env.NOTION_DATABASE_ID!;
 
@@ -20,19 +23,58 @@ export type NotionResponse = {
   properties: PersonalProjects;
 };
 
-export async function testNotion() {
+export type NotionContent = {
+  title: string;
+  description: string;
+  image: string;
+  tags: TechStack[];
+  url: string;
+};
+
+export async function getContent() {
   const pages = await notion.databases.query({ database_id, sorts: [{ direction: "ascending", property: "Order" }] });
   const pageIds = [];
   for (const result of pages.results) {
     pageIds.push(result.id);
   }
   const t = await Promise.all(pageIds.map((id) => notion.pages.retrieve({ page_id: id })));
+  const content: NotionContent[] = [];
   for (const te of t) {
     const page = te as any as NotionResponse;
-    console.log(page);
-    console.log(page.properties.Thumbnail.files[0]);
-    console.log(page.properties.Name.title[0].text.content);
-    console.log(page.properties.Tags.multi_select[0]);
+    const description = await notion.blocks.children.list({ block_id: te.id });
+    console.log(description);
+    let textDescription = ``;
+    for (const block of description.results) {
+      const text = block as any as ParagraphBlockObjectResponse;
+      console.log(text);
+      for (const content of text.paragraph.rich_text) {
+        let textToAdd: string = "";
+        if (content.type === "text") {
+          if (content.text.link) {
+            textToAdd = `<a class="dark:text-indigo-400 text-indigo-600 hover:underline" target="_blank" href="${content.text.link.url}">${content.text.content}</a>`;
+          } else {
+            textToAdd = content.text.content;
+          }
+        }
+
+        textDescription += textToAdd;
+      }
+      console.log(textDescription);
+    }
+    const image = page.properties.Thumbnail.files[0];
+
+    content.push({
+      title: page.properties.Name.title[0].plain_text,
+      description: textDescription,
+      image: image.type === "file" ? image.file.url : image.type === "external" ? image.external.url : "",
+      tags: createTags(page.properties.Tags),
+      url: page.properties.URL.url || ""
+    });
   }
-  return t as any as NotionResponse[];
+  return content;
+}
+
+function createTags(tags: PersonalProjects["Tags"]) {
+  const stack = createStack(false, ...tags.multi_select.map(({ name }) => name as TechType));
+  return stack;
 }
