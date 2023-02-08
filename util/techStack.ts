@@ -37,6 +37,10 @@ export function createStack(includeAll: boolean, ...args: TechType[]) {
     {
       label: "Postgres",
       color: "fuchsia"
+    },
+    {
+      label: "Svelte",
+      color: "orange"
     }
   ];
   if (includeAll) return technologies;

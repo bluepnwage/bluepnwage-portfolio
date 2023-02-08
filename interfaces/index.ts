@@ -14,6 +14,7 @@ export type TechType =
   | "MongoDB"
   | "React"
   | "TypeScript"
+  | "Svelte"
   | "TailwindCSS";
 
 export interface EmailForm {

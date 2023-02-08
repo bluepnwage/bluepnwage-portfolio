@@ -33,7 +33,11 @@ export type NotionContent = {
 };
 
 export async function getContent() {
-  const pages = await notion.databases.query({ database_id, sorts: [{ direction: "ascending", property: "Order" }] });
+  const pages = await notion.databases.query({
+    database_id,
+    sorts: [{ direction: "ascending", property: "Order" }],
+    filter: { property: "Status", select: { equals: "Published" } }
+  });
   const pageIds = [];
   for (const result of pages.results) {
     pageIds.push(result.id);
