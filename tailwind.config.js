@@ -1,3 +1,5 @@
+const theme = require("./theme.json");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -7,7 +9,12 @@ module.exports = {
   ],
 
   theme: {
-    extend: {}
+    extend: {
+      colors: {
+        ...theme.color,
+        ...theme.palette
+      }
+    }
   },
   darkMode: "class",
   plugins: [require("@tailwindcss/typography")]

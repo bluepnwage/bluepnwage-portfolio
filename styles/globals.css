@@ -1,6 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url(tokens.css);
+@import url(colors.module.css);
+@import url(typography.module.css);
 
 :root.dark {
   --badge-bg-blue: rgba(79, 70, 229, 0.35);

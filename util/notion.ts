@@ -42,7 +42,7 @@ export async function getContent() {
   for (const result of pages.results) {
     pageIds.push(result.id);
   }
-  const pageBlocks = await Promise.all(pageIds.map((id) => notion.pages.retrieve({ page_id: id })));
+  const pageBlocks = await Promise.all(pageIds.map(id => notion.pages.retrieve({ page_id: id })));
   const content: NotionContent[] = [];
   for (const p of pageBlocks) {
     const page = p as any as NotionResponse;
@@ -72,7 +72,7 @@ function createDescription(block: ListBlockChildrenResponse) {
       let textToAdd: string = "";
       if (content.type === "text") {
         if (content.text.link) {
-          textToAdd = `<a class="dark:text-indigo-400 text-indigo-600 hover:underline" target="_blank" href="${content.text.link.url}">${content.text.content}</a>`;
+          textToAdd = `<a class="dark:text-primary-dark text-primary hover:underline" target="_blank" href="${content.text.link.url}">${content.text.content}</a>`;
         } else {
           textToAdd = content.text.content;
         }
