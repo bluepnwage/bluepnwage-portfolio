@@ -2,6 +2,7 @@
 import useSWR, { Fetcher } from "swr";
 import { BrandSpotify } from "tabler-icons-react";
 import Image from "next/image";
+import { Anchor } from "./Anchor";
 
 export interface SpotifyData {
   isPlaying: boolean;
@@ -40,8 +41,10 @@ export function SpotifySong() {
                 alt={"Up 2 Me album cover by Yeat"}
                 loading={"lazy"}
               />
-              <figcaption className="block text-center space-y-2 dark:text-gray-300 text-gray-900">
-                <span className="block font-semibold">{data.title}</span>
+              <figcaption className="block text-center space-y-2  overflow-hidden dark:text-gray-300 text-gray-900">
+                <Anchor href={data.songUrl} className="block font-semibold truncate ">
+                  {data.title}
+                </Anchor>
                 <span className="text-sm">{data.artist}</span>
               </figcaption>
             </figure>

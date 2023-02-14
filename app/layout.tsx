@@ -21,7 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta property="og:image" content="https://bluepnwage-portfolio.vercel.app/bluepnwage.jpg" />
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className="dark:bg-background-dark duration-200 ease-out dark:text-gray-300 text-gray-900">
+      <body className="bg-background dark:bg-background-dark duration-200 ease-out dark:text-gray-300 text-gray-900">
         <Header />
         <main className="lg:ml-24">{children}</main>
         <AnalyticsWrapper />
