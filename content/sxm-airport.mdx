@@ -1,0 +1,10 @@
+---
+title: SXM Airport
+image: /sxm-airport.png
+order: 1
+tags:
+  - Next.js
+  - TypeScript
+---
+
+This project allows you to view the daily schedule for all arrivals and departures concerning . There is also an interactive map, powered by [mapbox](https://www.mapbox.com), which can be used to track live flights that are currently flying towards Sint Maarten. Finally, there is a gallery to view images of the airport. Users can sign up and upload their own images to the gallery if they wish to do so. Everything from authentication, to storing images and saving data is handled thanks to [Firebase](https://firebase.google.com). I made use of caching responses by setting HTTP headers combined with [Redis](https://redis.io), to ensure the server does not make any unnecessary requests knowing the airport schedule is most likely updated only once a day. Rate limiting has also been set up to prevent users from uploading more than 25 images a day. Doing this gives me time to review and approve of all uploaded images.

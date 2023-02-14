@@ -18,9 +18,32 @@ export const Blog = defineDocumentType(() => ({
   }
 }));
 
+export const Project = defineDocumentType(() => ({
+  name: "Project",
+  contentType: "mdx",
+  filePathPattern: "**/*.mdx",
+  fields: {
+    title: {
+      type: "string",
+      required: true
+    },
+    image: {
+      type: "string",
+      required: true
+    },
+    tags: {
+      type: "list",
+      of: { type: "string" }
+    },
+    order: {
+      type: "number"
+    }
+  }
+}));
+
 export default makeSource({
   contentDirPath: "content",
-  documentTypes: [Blog],
+  documentTypes: [Blog, Project],
   mdx: {
     rehypePlugins: [
       [

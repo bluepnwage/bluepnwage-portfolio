@@ -1,9 +1,9 @@
 import { useMDXComponent } from "next-contentlayer/hooks";
-import type { Blog } from "contentlayer/generated";
+import type { Blog, Project } from "contentlayer/generated";
 import { CodeBlock } from "./CodeBlock";
 
-export function MDX({ blog }: { blog: Blog }) {
-  const MDXContent = useMDXComponent(blog.body.code);
+export function MDX({ content }: { content: Blog | Project }) {
+  const MDXContent = useMDXComponent(content.body.code);
 
   return (
     <div className="flex flex-col items-center">
@@ -12,7 +12,7 @@ export function MDX({ blog }: { blog: Blog }) {
      prose-ul:list-disc prose-ul:p-4 prose-pre:bg-zinc-800 prose-pre:rounded-md prose-pre:p-4`}
       >
         <header>
-          <h1 className="display-large text-center mb-5">{blog.title}</h1>
+          <h1 className="display-large text-center mb-5">{content.title}</h1>
         </header>
         <MDXContent components={{ pre: CodeBlock }} />
       </section>

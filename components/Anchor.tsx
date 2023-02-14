@@ -1,12 +1,10 @@
-import type { AnchorHTMLAttributes, ReactNode } from "react";
+import type { ComponentPropsWithoutRef } from "react";
 
-interface PropTypes extends AnchorHTMLAttributes<HTMLAnchorElement> {
-  children: ReactNode;
-}
+type PropTypes = ComponentPropsWithoutRef<"a">;
 
 export function Anchor({ children, ...anchorProps }: PropTypes) {
   return (
-    <a {...anchorProps} className="dark:text-indigo-400 text-indigo-600 hover:underline">
+    <a {...anchorProps} target={"_blank"} className="dark:text-primary-dark text-primary hover:underline">
       {children}
     </a>
   );

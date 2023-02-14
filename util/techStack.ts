@@ -1,6 +1,6 @@
 import { TechStack, TechType } from "../interfaces";
 
-export function createStack(includeAll: boolean, ...args: TechType[]) {
+export function createStack(includeAll: boolean, ...args: (TechType | string)[]): TechStack[] {
   const technologies: TechStack[] = [
     {
       label: "HTML",
@@ -45,5 +45,5 @@ export function createStack(includeAll: boolean, ...args: TechType[]) {
   ];
   if (includeAll) return technologies;
 
-  return technologies.filter((tech) => args.some((entry) => entry === tech.label));
+  return technologies.filter(tech => args.some(entry => entry === tech.label));
 }
