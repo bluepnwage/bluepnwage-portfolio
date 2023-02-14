@@ -1,5 +1,6 @@
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
 import rehypePrettyCode from "rehype-pretty-code";
+import { getCreationDate } from "./file-date";
 
 export const Blog = defineDocumentType(() => ({
   name: "Blog",
@@ -8,12 +9,16 @@ export const Blog = defineDocumentType(() => ({
 
   fields: {
     title: { type: "string", required: true },
-    date: { type: "date", required: true },
     published: { type: "boolean", required: true }
   },
   computedFields: {
     slug: {
-      resolve: blog => `${blog._raw.flattenedPath}`
+      resolve: blog => `${blog._raw.flattenedPath}`,
+      type: "string"
+    },
+    date: {
+      resolve: async blog => await getCreationDate(blog._raw.sourceFileName),
+      type: "date"
     }
   }
 }));

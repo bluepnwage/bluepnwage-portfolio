@@ -20,7 +20,7 @@ const fetcher: Fetcher<SpotifyData> = (url: string) =>
 
 export function SpotifySong() {
   const { data } = useSWR("/api/spotify", fetcher, { refreshInterval: 30000 });
-  if (!data) return <p className="hidden md:block">Loading...</p>;
+  if (!data) return <p className="text-center">Loading...</p>;
   return (
     <>
       {data.isPlaying && (

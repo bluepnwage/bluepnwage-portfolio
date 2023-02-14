@@ -2,9 +2,9 @@
 import { Menu2, X } from "tabler-icons-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MobileSpotify } from "./MobileSpotify";
 import { SpotifySong } from "components/SpotifySong";
 import { Link } from "components/Link";
+
 export function Drawer() {
   const [menu, setMenu] = useState(false);
   const toggleMenu = () => {
