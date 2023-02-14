@@ -14,7 +14,7 @@ export function ThemeToggle() {
     <>
       <button
         aria-label="Toggle theme"
-        className="border relative border-zinc-600 rounded-md p-2 active:top-[2px]"
+        className="border lg:block  lg:mx-auto relative border-zinc-600 rounded-md p-2 active:top-[2px]"
         onClick={toggleTheme}
       >
         {theme === "dark" && <Sun size={16} className="light-icon text-yellow-600" />}

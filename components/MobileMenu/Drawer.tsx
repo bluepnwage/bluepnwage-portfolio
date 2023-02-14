@@ -3,10 +3,12 @@ import { Menu2, X } from "tabler-icons-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MobileSpotify } from "./MobileSpotify";
+import { SpotifySong } from "components/SpotifySong";
+import { Link } from "components/Link";
 export function Drawer() {
   const [menu, setMenu] = useState(false);
   const toggleMenu = () => {
-    setMenu((prev) => !prev);
+    setMenu(prev => !prev);
   };
   return (
     <>
@@ -24,7 +26,7 @@ export function Drawer() {
             initial={{ x: "-100vw" }}
             animate={{ x: 0 }}
             exit={{ x: "-100vw" }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
+            transition={{ duration: 0.2, ease: "easeInOut" }}
             className="fixed top-0 left-0 bg-white dark:bg-zinc-900 z-[9999]  w-screen h-screen"
             role={"dialog"}
             aria-labelledby="navigation"
@@ -42,18 +44,17 @@ export function Drawer() {
               </button>
             </div>
             <div className="flex flex-col gap-10 items-center">
-              <ul onClick={() => setMenu(false)} className="text-center space-y-2">
-                <li>
-                  <a href={"#about"}>About</a>
-                </li>
-                <li>
-                  <a href={"#projects"}>Projects</a>
-                </li>
-                <li>
-                  <a href={"#contact"}>Contact</a>
-                </li>
+              <ul className="text-center space-y-2">
+                <Link onClick={() => setMenu(false)} href={"/"}>
+                  Home
+                </Link>
+                <Link onClick={() => setMenu(false)} href={"/blogs"}>
+                  Blogs
+                </Link>
               </ul>
-              <MobileSpotify />
+              <div className="w-3/5">
+                <SpotifySong />
+              </div>
             </div>
           </motion.div>
         )}

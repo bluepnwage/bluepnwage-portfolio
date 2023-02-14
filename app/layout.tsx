@@ -23,7 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="dark:bg-background-dark duration-200 ease-out dark:text-gray-300 text-gray-900">
         <Header />
-        <main>{children}</main>
+        <main className="lg:ml-24">{children}</main>
         <AnalyticsWrapper />
       </body>
     </html>

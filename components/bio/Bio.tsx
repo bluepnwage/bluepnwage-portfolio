@@ -6,12 +6,12 @@ export function Bio() {
   const skills = createStack(true);
   return (
     <>
-      <header className="flex flex-col items-center">
+      <header className="flex flex-col mt-16 lg:mt-36 items-center">
         <h1 className="font-bold text-center md:text-start w-4/5 md:w-3/5 text-5xl mb-10 md:mb-5">
           Agis Carty
         </h1>
       </header>
-      <section id="about" className="mb-20 flex flex-col items-center">
+      <section id="about" className="mb-20 flex flex-col items-center ">
         <div className="flex md:flex-row w-4/5 md:w-3/5 flex-col-reverse mb-5">
           <div className="basis-3/5 grow">
             <h2 className="font-bold text-center  md:text-start text-3xl mb-5">
