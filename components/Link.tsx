@@ -1,13 +1,13 @@
-import type { AnchorHTMLAttributes, ReactNode } from "react";
+import NextLink from "next/link";
+import type { ComponentPropsWithoutRef } from "react";
+import type { LinkProps } from "next/link";
 
-interface PropTypes extends AnchorHTMLAttributes<HTMLAnchorElement> {
-  children: ReactNode;
-}
+type PropTypes = Omit<ComponentPropsWithoutRef<"a">, "href"> & LinkProps;
 
 export function Link({ children, ...anchorProps }: PropTypes) {
   return (
-    <a {...anchorProps} className="font-semibold hover:text-indigo-400">
+    <NextLink {...anchorProps} className="font-semibold hover:text-indigo-400">
       {children}
-    </a>
+    </NextLink>
   );
 }

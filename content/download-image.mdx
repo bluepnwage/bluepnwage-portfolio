@@ -1,0 +1,84 @@
+---
+title: How to download images in JavaScript
+date: 2023-02-11
+published: true
+---
+
+import { Anchor } from "../components/Anchor";
+
+Downloading an image programmatically is fairly straightforward and can be broken down into 3 steps:
+
+- Fetch the url of an image and get the [blob](https://developer.mozilla.org/en-US/docs/Web/API/Blob) of the response.
+- Turn the blob into a url.
+- Create an anchor element and set its `href` to the url received from the blob and add the `download` attribute to the element.
+
+First, we'll create an asynchronous function that fetches the image and returns the response as a blob.
+
+```js
+async function fetchImage(imgURL) {
+  const res = await fetch(imgURL);
+  return res.blob();
+}
+```
+
+Once that's done, we need to create a URL out of the blob so that we can use it later to download the image. We can accomplish this by using `URL.createObjectURL()` which will create a string representing the data of the image.
+Fetching the image is important because downloads requires the url to be under the <Anchor href='https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy' target="_blank">**same-origin**</Anchor>.
+
+```js
+async function downloadImage() {
+  const blob = await fetchImage("random-url");
+  const url = URL.createObjectURL(blob);
+}
+```
+
+Finally, we'll create an anchor element and dispatch a click event so that we can download the image to our computer.
+
+```js
+async function downloadImage() {
+  const blob = await fetchImage("random-url");
+  const url = URL.createObjectURL(blob);
+
+  const anchor = document.createElement("a");
+  anchor.href = url;
+  //You can specify what the name of the file will be
+  //by setting the download property to a custom string
+  anchor.download = "my-image";
+  anchor.click();
+
+  //Calling this method important to avoid memory leaks
+  URL.revokeObjectURL(url);
+}
+```
+
+And that's it! You've successfully learned how to download images programmatically!
+Here's what the full code might look like when using plain JavaScript.
+
+```js
+const btn = document.querySelector(".btn");
+
+const image = "random-url";
+
+async function fetchImage(imgURL) {
+  const res = await fetch(imgURL);
+  return res.blob();
+}
+
+async function downloadImage() {
+  const blob = await fetchImage(image);
+  const url = URL.createObjectURL(blob);
+
+  const anchor = document.createElement("a");
+  anchor.href = url;
+  //You can specify what the name of the file will be
+  //by setting the download property to a custom string
+  anchor.download = "my-image";
+  anchor.click();
+
+  //Calling this method important to avoid memory leaks
+  URL.revokeObjectURL(url);
+}
+
+btn.addEventListener("click", () => {
+  downloadImage();
+});
+```
