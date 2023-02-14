@@ -9,5 +9,5 @@ export function getStaticParams() {
 export default function Blog({ params }: { params: { slug: string } }) {
   const blog = allBlogs.find(blog => blog.slug === params.slug);
   if (!blog) notFound();
-  return <MDX blog={blog} />;
+  return <MDX content={blog} />;
 }
