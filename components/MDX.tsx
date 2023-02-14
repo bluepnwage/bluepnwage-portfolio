@@ -2,7 +2,7 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 import type { Blog, Project } from "contentlayer/generated";
 import { CodeBlock } from "./CodeBlock";
 
-export function MDX({ content }: { content: Blog | Project }) {
+export function MDX({ content }: { content: Blog }) {
   const MDXContent = useMDXComponent(content.body.code);
 
   return (
