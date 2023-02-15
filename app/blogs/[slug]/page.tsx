@@ -1,9 +1,10 @@
 import { allBlogs } from "contentlayer/generated";
 import { notFound } from "next/navigation";
 import { MDX } from "components/MDX";
-export function getStaticParams() {
+
+export function generateStaticParams() {
   const slugs = allBlogs.filter(blog => blog.published);
-  return slugs.map(blog => blog.slug) as unknown as string[];
+  return slugs.map(blog => ({ slug: blog.slug }));
 }
 
 export default function Blog({ params }: { params: { slug: string } }) {
