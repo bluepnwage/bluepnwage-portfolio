@@ -18,8 +18,11 @@ export default function Blogs() {
                 key={blog.slug}
                 className="border-b py-2 last-of-type:border-b-0 px-4 space-y-2 border-surface-variant-dark"
               >
-                <h3 className="headline-small text-on-surface-dark">{blog.title}</h3>
-                <time className="block body-medium mb-10 text-on-surface-variant-dark" dateTime={blog.date}>
+                <h3 className="headline-small text-on-surface dark:text-on-surface-dark">{blog.title}</h3>
+                <time
+                  className="block body-medium mb-10 text-on-surface-variant dark:text-on-surface-variant-dark"
+                  dateTime={blog.date}
+                >
                   {formatter(blog.date)}
                 </time>
                 <Link className="dark:text-primary-70 text-primary-40" href={`/blogs/${blog.slug}`}>

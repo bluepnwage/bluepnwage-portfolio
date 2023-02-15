@@ -24,6 +24,7 @@
   --badge-text-fuchsia: rgb(250, 232, 255);
   --badge-bg-indigo: rgba(79, 70, 229, 0.35);
   --badge-text-indigo: rgb(224, 231, 255);
+  --code-bg-color: rgb(39, 39, 42);
 }
 
 :root.light {
@@ -45,11 +46,13 @@
   --badge-bg-fuchsia: rgb(250, 232, 255);
   --badge-text-indigo: rgba(79, 70, 229);
   --badge-bg-indigo: rgb(224, 231, 255);
+  --code-bg-color: rgb(228, 228, 231);
 }
 
 html {
   scroll-behavior: smooth;
   scroll-padding: 70px;
+  --pre-bg-color: rgb(39, 39, 42);
 }
 
 .dark {
