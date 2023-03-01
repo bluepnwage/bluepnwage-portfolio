@@ -1,6 +1,6 @@
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
 import rehypePrettyCode from "rehype-pretty-code";
-import { getCreationDate } from "./file-date";
+import { getCreationDate, getUpdateDate } from "./file-date";
 
 export const Blog = defineDocumentType(() => ({
   name: "Blog",
@@ -18,6 +18,10 @@ export const Blog = defineDocumentType(() => ({
     },
     date: {
       resolve: async blog => await getCreationDate(blog._raw.sourceFileName),
+      type: "date"
+    },
+    updated: {
+      resolve: async blog => await getUpdateDate(blog._raw.sourceFileName),
       type: "date"
     }
   }

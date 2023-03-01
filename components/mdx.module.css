@@ -5,3 +5,8 @@
 .blog pre {
   background-color: var(--pre-bg-color);
 }
+
+.blog h2 {
+  font-size: 2.25rem;
+  font-weight: bold;
+}

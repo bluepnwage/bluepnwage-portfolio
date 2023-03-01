@@ -18,12 +18,14 @@ const fetcher: Fetcher<SpotifyData> = (url: string) =>
     .then(res => res.json())
     .then(data => data);
 
+const refreshInterval = 1000 * 30;
+
 export function SpotifySong() {
-  const { data } = useSWR("/api/spotify", fetcher, { refreshInterval: 30000 });
-  if (!data) return <p className="text-center">Loading...</p>;
+  const { data, isLoading } = useSWR("/api/spotify", fetcher, { refreshInterval });
+  if (isLoading) return <p className="text-center">Loading...</p>;
   return (
     <>
-      {data.isPlaying && (
+      {data?.isPlaying && (
         <>
           <div className="flex flex-col items-center gap-2">
             <div className="bg-green-700  text-gray-300 rounded-full p-1">
@@ -51,7 +53,7 @@ export function SpotifySong() {
           </div>
         </>
       )}
-      {!data.isPlaying && (
+      {!data?.isPlaying && (
         <div className="flex flex-col items-center gap-2">
           <div className="bg-green-700  text-gray-300 rounded-full p-1">
             <BrandSpotify />

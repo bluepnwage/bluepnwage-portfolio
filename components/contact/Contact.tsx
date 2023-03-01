@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { At, BrandLinkedin, BrandGithub } from "tabler-icons-react";
+import { At, BrandGithub } from "tabler-icons-react";
 import { ContactForm } from "./ContactForm";
 
 export function Contact() {
@@ -21,12 +21,6 @@ export function Contact() {
               href={"https://github.com/bluepnwage"}
               contact="bluepnwage"
               icon={<BrandGithub aria-hidden />}
-            />
-            <ContactInfo
-              href={"https://www.linkedin.com/in/agis-carty-a49505230/"}
-              label="LinkedIn"
-              contact="Agis Carty"
-              icon={<BrandLinkedin aria-hidden />}
             />
           </div>
         </div>
