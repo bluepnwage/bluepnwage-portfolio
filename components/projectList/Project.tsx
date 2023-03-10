@@ -18,7 +18,7 @@ export function Project({ project }: PropTypes) {
       <div className="basis-2/4 md:w-2/4 grow">
         <h3 className="font-bold text-2xl mb-2">{project.title}</h3>
         <MDX components={{ a: Anchor }} />
-        <Anchor href="https://sxm-airport.vercel.app">Link to project</Anchor>
+        <Anchor href={project.link}>Link to project</Anchor>
         <strong className="my-2 block">Technologies used:</strong>
         <div className="flex gap-4 mb-2 justify-center flex-wrap w-full">
           {stack.map(tech => {

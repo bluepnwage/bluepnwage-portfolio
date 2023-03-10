@@ -46,6 +46,10 @@ export const Project = defineDocumentType(() => ({
     },
     order: {
       type: "number"
+    },
+    link: {
+      type: "string",
+      required: true
     }
   }
 }));
