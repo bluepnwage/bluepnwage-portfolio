@@ -1,10 +1,8 @@
 import { getNowPlaying } from "util/spotify";
 
-export const config = {
-  runtime: "edge"
-};
+export const runtime = "edge";
 
-export default async function handler() {
+export const GET = async () => {
   const response = await getNowPlaying();
   if (response.status === 204 || response.status > 400) {
     return new Response(JSON.stringify({ isPlaying: false }), {
@@ -49,4 +47,4 @@ export default async function handler() {
       }
     }
   );
-}
+};
