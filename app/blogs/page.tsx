@@ -1,6 +1,11 @@
 import { allBlogs } from "contentlayer/generated";
 import { formatter } from "util/formatDate";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blogs"
+};
 
 export default function Blogs() {
   return (
