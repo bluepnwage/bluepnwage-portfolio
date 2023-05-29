@@ -1,6 +1,7 @@
 import { getNowPlaying } from "util/spotify";
 
 export const runtime = "edge";
+export const dynamic = "force-dynamic";
 
 export const GET = async () => {
   const response = await getNowPlaying();
