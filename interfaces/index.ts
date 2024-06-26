@@ -23,3 +23,12 @@ export interface EmailForm {
   subject: string;
   message: string;
 }
+
+export interface SpotifyData {
+  isPlaying: boolean;
+  title: string;
+  artist: string;
+  albumImageUrl: string;
+  songUrl: string;
+  album: string;
+}
