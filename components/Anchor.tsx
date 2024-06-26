@@ -7,7 +7,10 @@ export function Anchor({ children, ...anchorProps }: PropTypes) {
     <a
       {...anchorProps}
       target={"_blank"}
-      className={cx("dark:text-primary-70 text-primary-40 hover:underline", anchorProps.className)}
+      className={cx(
+        "font-semibold text-gray-100 underline",
+        anchorProps.className
+      )}
     >
       {children}
     </a>

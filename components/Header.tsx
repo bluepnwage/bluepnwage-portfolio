@@ -1,30 +1,18 @@
-import { Link } from "./Link";
-import { ThemeToggle } from "./ThemeToggle";
 import { MobileMenu } from "./MobileMenu/MobileMenu";
-import { Suspense } from "react";
-import { SpotifySong } from "./SpotifySong";
+import { NavLink } from "./nav-link";
 
 export default function Header() {
   return (
     <header
-      className={`w-full duration-200 ease-out items-center px-4 py-2 lg:py-0 lg:px-0 justify-between 
-      flex lg:block lg:w-1/6 lg:space-y-4 border-b lg:border-b-0 border-zinc-300 
-      dark:border-zinc-700 bg-background 
-     dark:bg-background-dark sticky lg:fixed top-0 z-[9999] left-0 lg:top-36 lg:left-16`}
+      className={`w-full  backdrop-blur-md sticky top-0 left-0 bg-neutral-900/50`}
     >
-      <nav>
-        <MobileMenu />
-        <ul className="space-y-2 hidden lg:block">
-          <Link href={"/"}>Home</Link>
-          <Link href={"/blogs"}>Blogs</Link>
+      <nav className="w-3/5 container mx-auto border-b-neutral-600 border-b  h-20 flex items-center">
+        {/* <MobileMenu /> */}
+        <ul className="hidden lg:flex gap-4">
+          <NavLink href={"/"}>Home</NavLink>
+          <NavLink href={"/blogs"}>Blogs</NavLink>
         </ul>
       </nav>
-      <Suspense fallback={null}>
-        <div className="hidden lg:block">
-          <SpotifySong />
-        </div>
-      </Suspense>
-      <ThemeToggle />
     </header>
   );
 }
