@@ -10,7 +10,7 @@ export function useMeasure(title?: string) {
     right: 0,
     top: 0,
     x: 0,
-    y: 0,
+    y: 0
   });
   useEffect(() => {
     if (!ref.current) return;

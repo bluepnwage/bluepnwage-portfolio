@@ -45,7 +45,7 @@ export default function RootLayout({
       </head>
       <body className="bg-background  dark:bg-neutral-900 duration-200 ease-out dark:text-gray-200 text-gray-900">
         <Header />
-        <main className="md:w-3/5 container mx-auto">
+        <main className="md:w-3/5 max-w-screen-lg mx-auto">
           {children}
           <SpotifyWidget />
         </main>
