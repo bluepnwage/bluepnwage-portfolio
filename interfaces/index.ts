@@ -31,4 +31,8 @@ export interface SpotifyData {
   albumImageUrl: string;
   songUrl: string;
   album: string;
+  progressMs: number;
+  durationMs: number;
+  albumUrl: string;
+  artistUrl: string;
 }

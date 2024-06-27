@@ -6,6 +6,7 @@ import { ExpandedWidget } from "./expanded-widget";
 import { RegularWidget } from "./regular-widget";
 import { WidgetBar } from "./widget-bar";
 import { SpotifyData } from "interfaces";
+import { CurrentMSProvider } from "./current-provider";
 
 const fetcher: Fetcher<SpotifyData> = (url: string) =>
   fetch(url)
@@ -25,7 +26,11 @@ export function SpotifyWidget() {
   if (!data.isPlaying) return null;
 
   return (
-    <>
+    <CurrentMSProvider
+      key={`${data.durationMs}`}
+      ms={data.progressMs}
+      totalDuration={data.durationMs}
+    >
       <RegularWidget
         isExpanded={isExpanded}
         {...data}
@@ -42,6 +47,6 @@ export function SpotifyWidget() {
           </ExpandedWidget>
         )}
       </AnimatePresence>
-    </>
+    </CurrentMSProvider>
   );
 }

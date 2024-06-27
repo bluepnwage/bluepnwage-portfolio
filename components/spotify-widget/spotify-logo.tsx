@@ -2,8 +2,8 @@ export function SpotifyLogo() {
   return (
     <svg
       fill="#18D860"
-      height={24}
-      width={24}
+      height={16}
+      width={16}
       version="1.1"
       id="Layer_1"
       xmlns="http://www.w3.org/2000/svg"
