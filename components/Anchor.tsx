@@ -1,5 +1,5 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { cx } from "cva";
+
 type PropTypes = ComponentPropsWithoutRef<"a">;
 
 export function Anchor({ children, ...anchorProps }: PropTypes) {
@@ -7,10 +7,7 @@ export function Anchor({ children, ...anchorProps }: PropTypes) {
     <a
       {...anchorProps}
       target={"_blank"}
-      className={cx(
-        "font-semibold text-gray-100 underline",
-        anchorProps.className
-      )}
+      className={"font-medium text-gray-100 underline"}
     >
       {children}
     </a>
