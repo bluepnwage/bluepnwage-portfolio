@@ -8,7 +8,11 @@ const nextConfig = {
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
   reactStrictMode: true,
   images: { domains: ["i.scdn.co"] },
-
+  logging: {
+    fetches: {
+      fullUrl: true
+    }
+  },
   async headers() {
     return [
       {

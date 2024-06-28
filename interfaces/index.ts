@@ -18,4 +18,5 @@ export interface SpotifyData {
   durationMs: number;
   albumUrl: string;
   artistUrl: string;
+  explicit: boolean;
 }

@@ -1,5 +1,4 @@
 import { getNowPlaying } from "util/spotify";
-
 export const runtime = "edge";
 export const dynamic = "force-dynamic";
 
@@ -9,8 +8,8 @@ export const GET = async () => {
     return new Response(JSON.stringify({ isPlaying: false }), {
       status: 200,
       headers: {
-        "content-type": "application/json",
-      },
+        "content-type": "application/json"
+      }
     });
   }
 
@@ -19,8 +18,8 @@ export const GET = async () => {
     return new Response(JSON.stringify({ isPlaying: false }), {
       status: 200,
       headers: {
-        "content-type": "application/json",
-      },
+        "content-type": "application/json"
+      }
     });
   }
 
@@ -34,6 +33,8 @@ export const GET = async () => {
   const songUrl = song.item.external_urls.spotify;
   const progressMs = song.progress_ms;
   const durationMs = song.item.duration_ms;
+  const explicit = song.item.explicit;
+
   const obj = {
     isPlaying,
     title,
@@ -45,13 +46,14 @@ export const GET = async () => {
     songUrl,
     progressMs,
     durationMs,
+    explicit
   };
 
   return new Response(JSON.stringify(obj), {
     status: 200,
     headers: {
       "content-type": "application/json",
-      "cache-control": "public, s-maxage=45, stale-while-revalidate=30",
-    },
+      "cache-control": "public, s-maxage=45, stale-while-revalidate=30"
+    }
   });
 };

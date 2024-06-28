@@ -23,17 +23,14 @@ export function RegularWidget({ isExpanded, children, ...data }: PropTypes) {
       duration: 5,
       delay: 3,
       ease: "linear",
-      onComplete: () => setDirection((prev) => !prev),
+      onComplete: () => setDirection((prev) => !prev)
     } as const;
 
     if (!direction) {
       animate(
         textRef.current,
         {
-          x:
-            textRect.width > containerRect.width
-              ? containerRect.width - textRect.width - 10
-              : 0,
+          x: textRect.width > containerRect.width ? containerRect.width - textRect.width - 10 : 0
         },
         transition
       );
@@ -41,18 +38,13 @@ export function RegularWidget({ isExpanded, children, ...data }: PropTypes) {
       animate(
         textRef.current,
         {
-          x: 0,
+          x: 0
         },
         transition
       );
     }
-  }, [
-    direction,
-    data?.isPlaying,
-    textRect.width,
-    containerRect.width,
-    isExpanded,
-  ]);
+  }, [direction, data?.isPlaying, textRect.width, containerRect.width, isExpanded]);
+
   return (
     <motion.div
       layout
@@ -77,17 +69,22 @@ export function RegularWidget({ isExpanded, children, ...data }: PropTypes) {
             ref={containerRef}
             className="space-y-1 w-full"
           >
-            <p className="font-medium relative h-5 overflow-hidden w-full">
+            <p className="font-medium relative h-6 overflow-hidden w-full">
               <motion.span
                 key={data.title}
                 ref={textRef}
                 animate={{
-                  opacity: isExpanded ? 0 : 1,
+                  opacity: isExpanded ? 0 : 1
                 }}
                 transition={{ duration: 0.15, delay: isExpanded ? 0 : 0.3 }}
-                className="text-nowrap absolute"
+                className="text-nowrap absolute flex items-center gap-2"
               >
-                {data.title}
+                {data.title}{" "}
+                {data.explicit && (
+                  <span className="bg-neutral-50 rounded-sm h-3 w-3 flex items-center justify-center  text-[10px] text-neutral-900">
+                    E
+                  </span>
+                )}
               </motion.span>
             </p>
             <motion.p
