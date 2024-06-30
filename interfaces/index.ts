@@ -1,4 +1,13 @@
-export type TechType = "next" | "javascript" | "css" | "supabase" | "tailwindcss" | "Remix" | "TypeScript";
+export type TechType =
+  | "next"
+  | "javascript"
+  | "css"
+  | "supabase"
+  | "tailwindcss"
+  | "remix"
+  | "TypeScript"
+  | "postgres"
+  | "firebase";
 
 export interface EmailForm {
   name: string;

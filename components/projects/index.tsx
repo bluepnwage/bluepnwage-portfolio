@@ -10,21 +10,21 @@ const projects = [
     stack: createStack("next", "supabase", "tailwindcss"),
     img: sxmQuiz,
     description:
-      "Elit proident esse adipisicing quis id consectetur non enim qui laborum exercitation nulla deserunt. Duis enim minim deserunt deserunt consectetur. Velit cupidatat consectetur labore eu amet irure elit consectetur. Et proident duis voluptate anim non."
+      "A quiz-based website that educates users about the culture of Saint Martin, tests their knowledge about the island, and allows the community to share their insights by writing and uploading articles. "
   },
   {
     title: "SXM Airport",
-    stack: createStack("next", "supabase", "css"),
+    stack: createStack("next", "firebase", "css"),
     img: sxmAirport,
     description:
-      "Minim voluptate voluptate eu nisi commodo voluptate eu labore eu elit labore. Laborum amet laboris ad cillum consequat consectetur deserunt dolore aute enim. Dolor cillum anim minim est Lorem deserunt aliquip enim magna ut pariatur labore occaecat. Cillum duis eu sit dolore ea commodo deserunt elit aliquip voluptate nisi officia ipsum. Minim irure sunt cillum tempor pariatur ex est minim laboris esse Lorem commodo est elit."
+      "A project that displays arrivals and departures for Princess Juliana Airport, featuring an interactive map for live flight tracking."
   },
   {
     title: "SXM POI",
-    stack: createStack("next", "supabase", "css"),
+    stack: createStack("next", "postgres", "css"),
     img: sxmPoi,
     description:
-      "Consectetur quis aute aliquip consectetur veniam ex aliquip irure elit amet nisi occaecat. Et sint ipsum officia do dolor duis aliqua. Amet et fugiat sit cillum quis elit aliquip amet aliqua deserunt ea esse aliqua. Occaecat ex mollit aliquip commodo minim et esse velit adipisicing do do qui cillum. Do commodo in deserunt esse irure fugiat duis magna veniam. Excepteur non non occaecat non occaecat ut exercitation aute occaecat quis ea. Consequat proident aute nisi quis deserunt ad velit minim."
+      "This was my first major project after learning React and Next.js. It features an interactive map showcasing various points of interest around the island."
   }
 ];
 

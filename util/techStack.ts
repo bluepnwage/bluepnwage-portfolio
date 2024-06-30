@@ -5,10 +5,12 @@ export function createStack(...args: TechType[]): string[] {
     javascript: "JavaScript",
     css: "CSS",
     next: "Next.Js",
-    Remix: "Remix",
+    remix: "Remix",
     supabase: "Supabase",
     tailwindcss: "TailwindCSS",
-    TypeScript: "TypeScript"
+    TypeScript: "TypeScript",
+    postgres: "PostgreSQL",
+    firebase: "Firebase"
   };
 
   const selectedStack = [];
