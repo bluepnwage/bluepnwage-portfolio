@@ -118,7 +118,7 @@ export function ExpandedWidget({ children, ...data }: SpotifyData & { children: 
                 </AnimatePresence>
               </div>
             </div>
-            <PlayProgress totalDuration={data.durationMs} />
+            <PlayProgress />
           </div>
         </div>
       </div>

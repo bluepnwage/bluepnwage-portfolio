@@ -11,7 +11,7 @@ export function Bio() {
           <h1 className="font-bold text-4xl mb-16">Agis Carty</h1>
         </header>
         <div>
-          <p className="leading-loose text-lg">
+          <p className="leading-loose text-lg ">
             I&apos;m a frontend developer based in{" "}
             <Anchor href="https://en.wikipedia.org/wiki/Collectivity_of_Saint_Martin">Saint-Martin</Anchor>. Currently,
             I work for the Collectivity of Saint-Martin, where I&apos;m focused on developing their new website.

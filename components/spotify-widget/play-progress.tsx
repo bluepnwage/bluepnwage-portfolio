@@ -1,10 +1,6 @@
 import * as Progress from "@radix-ui/react-progress";
 import { useCurrentMs } from "./current-provider";
 
-type PropTypes = {
-  totalDuration: number;
-};
-
 function convertMilliseconds(ms: number): string {
   // Calculate the total seconds from milliseconds
   const totalSeconds = Math.floor(ms / 1000);
@@ -23,17 +19,17 @@ function convertMilliseconds(ms: number): string {
   return `${formattedMinutes}:${formattedSeconds}`;
 }
 
-export function PlayProgress({ totalDuration }: PropTypes) {
-  const progress = useCurrentMs();
+export function PlayProgress() {
+  const { progress, duration } = useCurrentMs();
 
-  const currentProgress = (progress / totalDuration) * 100;
+  const currentProgress = (progress / duration) * 100;
 
   return (
     <div className="mt-4">
       <Progress.Root
         className="relative overflow-hidden bg-neutral-800 rounded-full w-full h-2"
         style={{
-          transform: "translateZ(0)",
+          transform: "translateZ(0)"
         }}
         value={currentProgress}
       >
@@ -44,7 +40,7 @@ export function PlayProgress({ totalDuration }: PropTypes) {
       </Progress.Root>
       <div className="flex justify-between text-gray-300 text-sm font-medium mt-2">
         <span>{convertMilliseconds(progress)}</span>
-        <span>{convertMilliseconds(totalDuration)}</span>
+        <span>{convertMilliseconds(duration)}</span>
       </div>
     </div>
   );

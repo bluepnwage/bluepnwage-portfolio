@@ -1,6 +1,6 @@
 import { useState, useContext, createContext, useEffect } from "react";
 
-const CurrentMSContext = createContext(0);
+const CurrentMSContext = createContext({ progress: 0, duration: 0 });
 
 function convertMilliseconds(ms: number): string {
   // Calculate the total seconds from milliseconds
@@ -23,7 +23,7 @@ function convertMilliseconds(ms: number): string {
 export function CurrentMSProvider({
   children,
   ms,
-  totalDuration,
+  totalDuration
 }: {
   children: React.ReactNode;
   ms: number;
@@ -45,9 +45,7 @@ export function CurrentMSProvider({
     return () => clearInterval(interval);
   }, [ms]);
   return (
-    <CurrentMSContext.Provider value={progress}>
-      {children}
-    </CurrentMSContext.Provider>
+    <CurrentMSContext.Provider value={{ progress, duration: totalDuration }}>{children}</CurrentMSContext.Provider>
   );
 }
 

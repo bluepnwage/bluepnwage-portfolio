@@ -55,8 +55,8 @@ type PropTypes = {
 
 function Project({ description, title, stack, img }: PropTypes) {
   return (
-    <li className="flex gap-8">
-      <figure className="aspect-video rounded overflow-hidden w-2/4">
+    <li className="flex flex-col md:flex-row gap-8">
+      <figure className="aspect-video rounded overflow-hidden md:w-2/4">
         <Image
           src={img}
           className="w-full h-full object-cover"

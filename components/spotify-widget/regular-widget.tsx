@@ -52,7 +52,7 @@ export function RegularWidget({ isExpanded, children, ...data }: PropTypes) {
       animate={{ opacity: 1, scale: 1 }}
       layoutId="widget-container"
       transition={{ duration: 0.5, type: "spring", bounce: 0 }}
-      className="fixed bottom-4 right-4 text-gray-100 z-50 w-1/6 bg-neutral-900 border  border-neutral-600 p-4 rounded"
+      className="fixed hidden md:block bottom-4 right-4 text-gray-100 z-50 w-1/6 bg-neutral-900 border  border-neutral-600 p-4 rounded"
     >
       <div>
         {children}
