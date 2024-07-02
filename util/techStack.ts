@@ -1,49 +1,22 @@
-import { TechStack, TechType } from "../interfaces";
+import { TechType } from "../interfaces";
 
-export function createStack(includeAll: boolean, ...args: (TechType | string)[]): TechStack[] {
-  const technologies: TechStack[] = [
-    {
-      label: "HTML",
-      color: "orange"
-    },
-    {
-      label: "CSS",
-      color: "cyan"
-    },
-    {
-      label: "JavaScript",
-      color: "yellow"
-    },
-    {
-      label: "TailwindCSS",
-      color: "indigo"
-    },
-    {
-      label: "React",
-      color: "blue"
-    },
-    {
-      label: "Next.js",
-      color: "gray"
-    },
-    {
-      label: "TypeScript",
-      color: "violet"
-    },
-    {
-      label: "MongoDB",
-      color: "green"
-    },
-    {
-      label: "Postgres",
-      color: "fuchsia"
-    },
-    {
-      label: "Svelte",
-      color: "orange"
-    }
-  ];
-  if (includeAll) return technologies;
+export function createStack(...args: TechType[]): string[] {
+  const technologies: Record<TechType, string> = {
+    javascript: "JavaScript",
+    css: "CSS",
+    next: "Next.Js",
+    remix: "Remix",
+    supabase: "Supabase",
+    tailwindcss: "TailwindCSS",
+    TypeScript: "TypeScript",
+    postgres: "PostgreSQL",
+    firebase: "Firebase"
+  };
 
-  return technologies.filter(tech => args.some(entry => entry === tech.label));
+  const selectedStack = [];
+  for (const selected of args) {
+    selectedStack.push(technologies[selected]);
+  }
+
+  return selectedStack;
 }

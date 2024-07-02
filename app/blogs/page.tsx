@@ -1,43 +1,24 @@
-import { allBlogs } from "contentlayer/generated";
-import { formatter } from "util/formatDate";
 import Link from "next/link";
-import type { Metadata } from "next";
+import { getBlogs } from "util/get-blogs";
 
-export const metadata: Metadata = {
-  title: "Blogs"
-};
+export default async function Page() {
+  const blogs = await getBlogs();
 
-export default function Blogs() {
   return (
-    <>
-      <header className="flex flex-col mt-16 lg:mt-36 items-center">
-        <h1 className="font-bold px-4 text-center md:text-start w-4/5 md:w-3/5 text-5xl mb-10 md:mb-5">
-          Blogs
-        </h1>
-      </header>
-      <section className="mb-20 flex flex-col items-center ">
-        <ul className="flex md:flex-row w-4/5 md:w-3/5 flex-col-reverse mb-5">
-          {allBlogs.map(blog => {
-            return (
-              <li
-                key={blog.slug}
-                className="border-b py-2 last-of-type:border-b-0 px-4 space-y-2 border-surface-variant-dark"
-              >
-                <h3 className="headline-small text-on-surface dark:text-on-surface-dark">{blog.title}</h3>
-                <time
-                  className="block body-medium mb-10 text-on-surface-variant dark:text-on-surface-variant-dark"
-                  dateTime={blog.date}
-                >
-                  {formatter(blog.date)}
-                </time>
-                <Link className="dark:text-primary-70 text-primary-40" href={`/blogs/${blog.slug}`}>
-                  Read blog
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </section>
-    </>
+    <div className="mt-16">
+      <h2 className="text-3xl mb-12">Blogs</h2>
+      <ul className="space-y-8">
+        {blogs.map((blog) => {
+          return (
+            <li key={blog.slug}>
+              <Link href={`/blogs/${blog.slug}`}>
+                <h3 className="text-xl mb-2 block text-gray-100">{blog.title}</h3>
+                <p className="">{blog.date}</p>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
   );
 }

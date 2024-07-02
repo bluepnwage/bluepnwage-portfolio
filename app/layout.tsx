@@ -1,8 +1,10 @@
 import "../styles/globals.css";
 import Header from "../components/Header";
-import "react-toastify/dist/ReactToastify.css";
 import { AnalyticsWrapper } from "../components/AnalyticsWrapper";
 import { Metadata } from "next";
+import { SpotifyWidget } from "components/spotify-widget";
+import { MobileHeader } from "components/mobile-header";
+import { MobileSpotifyWidget } from "components/spotify-widget/mobile-spotify-widget";
 
 export const metadata: Metadata = {
   title: {
@@ -21,13 +23,24 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="dark">
+    <html
+      lang="en"
+      className="dark"
+    >
       <head>
-        <link rel="canonical" href="https://bluepnwage-portfolio.vercel.app/" />
+        <link
+          rel="canonical"
+          href="https://bluepnwage-portfolio.vercel.app/"
+        />
       </head>
-      <body className="bg-background dark:bg-background-dark duration-200 ease-out dark:text-on-background-dark text-gray-900">
+      <body className="bg-background  dark:bg-neutral-900 duration-200 ease-out dark:text-gray-200 text-gray-900">
         <Header />
-        <main className="lg:ml-24">{children}</main>
+        <MobileHeader />
+        <MobileSpotifyWidget />
+        <main className="pb-16 md:pb-0 w-11/12 md:w-3/5 max-w-screen-lg mx-auto">
+          {children}
+          <SpotifyWidget />
+        </main>
         <AnalyticsWrapper />
       </body>
     </html>

@@ -1,3 +1,5 @@
+import { unstable_noStore as noStore } from "next/cache";
+
 const client_id = process.env.SPOTIFY_CLIENT_ID;
 const client_secret = process.env.SPOTIFY_CLIENT_SECRET;
 const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN;
@@ -7,6 +9,7 @@ const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-pla
 const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
 
 const getAccessToken = async () => {
+  noStore();
   const response = await fetch(TOKEN_ENDPOINT, {
     method: "POST",
     headers: {
