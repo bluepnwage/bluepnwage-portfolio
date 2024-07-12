@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-export function useMeasure(title?: string) {
+export function useMeasure() {
   const ref = useRef(null);
   const [rect, setRect] = useState<Omit<DOMRect, "toJSON">>({
     height: 0,
@@ -12,6 +12,7 @@ export function useMeasure(title?: string) {
     x: 0,
     y: 0
   });
+
   useEffect(() => {
     if (!ref.current) return;
     const observer = new ResizeObserver(([entry]) => {
@@ -22,6 +23,7 @@ export function useMeasure(title?: string) {
       if (!ref.current) return;
       observer.unobserve(ref.current);
     };
-  }, [title]);
+  }, []);
+
   return [ref, rect] as const;
 }

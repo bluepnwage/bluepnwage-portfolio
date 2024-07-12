@@ -7,6 +7,7 @@ type PropTypes = LinkProps & { children: React.ReactNode };
 
 export function NavLink({ children, ...props }: PropTypes) {
   const path = usePathname();
+  console.log(path);
   return (
     <li>
       <Link

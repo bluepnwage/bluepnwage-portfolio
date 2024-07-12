@@ -8,7 +8,7 @@ export function MobileHeader() {
           <nav className="   h-16 flex items-center">
             <ul className="flex md:hidden lg:flex gap-4 overflow-hidden">
               <NavLink href={"/"}>Home</NavLink>
-              <NavLink href={"/blogs"}>Blogs</NavLink>
+              <NavLink href={"/recipes"}>Recipes</NavLink>
             </ul>
           </nav>
         </div>

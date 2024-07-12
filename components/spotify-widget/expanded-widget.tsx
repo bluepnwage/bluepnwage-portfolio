@@ -5,8 +5,8 @@ import { useMeasure } from "util/use-measure";
 import { PlayProgress } from "./play-progress";
 
 export function ExpandedWidget({ children, ...data }: SpotifyData & { children: React.ReactNode }) {
-  const [textRef, textRect] = useMeasure(data?.title);
-  const [containerRef, containerRect] = useMeasure(data?.title);
+  const [textRef, textRect] = useMeasure();
+  const [containerRef, containerRect] = useMeasure();
   const [direction, setDirection] = useState(false);
   const [, animate] = useAnimate();
   useEffect(() => {

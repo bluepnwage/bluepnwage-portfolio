@@ -9,8 +9,8 @@ type PropTypes = {
 } & SpotifyData;
 
 export function RegularWidget({ isExpanded, children, ...data }: PropTypes) {
-  const [textRef, textRect] = useMeasure(data?.title);
-  const [containerRef, containerRect] = useMeasure(data?.title);
+  const [textRef, textRect] = useMeasure();
+  const [containerRef, containerRect] = useMeasure();
   const [direction, setDirection] = useState(false);
   const [, animate] = useAnimate();
 

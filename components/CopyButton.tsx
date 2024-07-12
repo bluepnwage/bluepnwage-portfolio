@@ -1,11 +1,13 @@
 "use client";
 import { Copy, Check } from "lucide-react";
 import { useState } from "react";
-import { useCodeBlock } from "./mdx-components/CodeBlockWrapper";
 import { AnimatePresence, motion } from "framer-motion";
 
-export function CopyButton() {
-  const content = useCodeBlock();
+type PropTypes = {
+  content: string;
+};
+
+export function CopyButton({ content }: PropTypes) {
   const [copied, setCopied] = useState(false);
   const onClick = async () => {
     await navigator.clipboard.writeText(content);
