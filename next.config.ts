@@ -1,13 +1,9 @@
 import createMDX from "@next/mdx";
-import code from "rehype-pretty-code";
-import remarkFrontmatter from "remark-frontmatter";
-import remarkMdxFrontmatter from "remark-mdx-frontmatter";
 
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
   reactStrictMode: true,
-  images: { domains: ["i.scdn.co"] },
+  // images: { domains: ["i.scdn.co"], remotePatterns: },
   logging: {
     fetches: {
       fullUrl: true
@@ -58,8 +54,8 @@ const securityHeaders = [
 
 const withMDX = createMDX({
   options: {
-    rehypePlugins: [code],
-    remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter]
+    // rehypePlugins: ["rehype-pretty-code"],`
+    remarkPlugins: ["remark-frontmatter", "remark-mdx-frontmatter"]
   }
 });
 

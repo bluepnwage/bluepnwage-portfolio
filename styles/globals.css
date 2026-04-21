@@ -1,8 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @import url(./bright.css);
+@import "tailwindcss";
+
 
 .hljs {
   background: none;
