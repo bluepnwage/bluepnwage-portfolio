@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://bluepnwage-portfolio.vercel.app
+Host: https://agiscarty.com/
 
 # Sitemaps
 Sitemap: https://bluepnwage-portfolio.vercel.app/sitemap.xml

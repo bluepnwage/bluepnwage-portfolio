@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 const config = {
-  siteUrl: process.env.SITE_URL || "https://bluepnwage-portfolio.vercel.app",
+  siteUrl: process.env.SITE_URL || "https://agiscarty.com/",
   generateRobotsTxt: true,
   generateIndexSitemap: false,
   // optional
