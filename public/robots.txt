@@ -6,4 +6,4 @@ Allow: /
 Host: https://agiscarty.com/
 
 # Sitemaps
-Sitemap: https://bluepnwage-portfolio.vercel.app/sitemap.xml
+Sitemap: https://agiscarty.com/sitemap.xml
